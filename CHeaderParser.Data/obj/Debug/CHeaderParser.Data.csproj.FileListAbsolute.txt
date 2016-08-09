@@ -1,7 +1,0 @@
-C:\DotNetTest\CHeaderParser\CHeaderParser.Data\bin\Debug\CHeaderParser.Data.dll
-C:\DotNetTest\CHeaderParser\CHeaderParser.Data\bin\Debug\CHeaderParser.Data.pdb
-C:\DotNetTest\CHeaderParser\CHeaderParser.Data\bin\Debug\CHeaderParser.Global.dll
-C:\DotNetTest\CHeaderParser\CHeaderParser.Data\bin\Debug\CHeaderParser.Global.pdb
-C:\DotNetTest\CHeaderParser\CHeaderParser.Data\obj\Debug\CHeaderParser.Data.csprojResolveAssemblyReference.cache
-C:\DotNetTest\CHeaderParser\CHeaderParser.Data\obj\Debug\CHeaderParser.Data.dll
-C:\DotNetTest\CHeaderParser\CHeaderParser.Data\obj\Debug\CHeaderParser.Data.pdb
