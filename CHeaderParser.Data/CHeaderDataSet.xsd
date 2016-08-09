@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CHeaderDataSet" targetNamespace="http://tempuri.org/CHeaderDataSet.xsd" xmlns:mstns="http://tempuri.org/CHeaderDataSet.xsd" xmlns="http://tempuri.org/CHeaderDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CHeaderDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="CHeaderDataSet" msprop:Generator_UserDSName="CHeaderDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tblTypeDefs" msprop:Generator_TableClassName="tblTypeDefsDataTable" msprop:Generator_TableVarName="tabletblTypeDefs" msprop:Generator_TablePropName="tblTypeDefs" msprop:Generator_RowDeletingName="tblTypeDefsRowDeleting" msprop:Generator_RowChangingName="tblTypeDefsRowChanging" msprop:Generator_RowEvHandlerName="tblTypeDefsRowChangeEventHandler" msprop:Generator_RowDeletedName="tblTypeDefsRowDeleted" msprop:Generator_UserTableName="tblTypeDefs" msprop:Generator_RowChangedName="tblTypeDefsRowChanged" msprop:Generator_RowEvArgName="tblTypeDefsRowChangeEvent" msprop:Generator_RowClassName="tblTypeDefsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TypeDefName" msprop:Generator_ColumnVarNameInTable="columnTypeDefName" msprop:Generator_ColumnPropNameInRow="TypeDefName" msprop:Generator_ColumnPropNameInTable="TypeDefNameColumn" msprop:Generator_UserColumnName="TypeDefName" type="xs:string" />
+              <xs:element name="Elements" msprop:Generator_ColumnVarNameInTable="columnElements" msprop:Generator_ColumnPropNameInRow="Elements" msprop:Generator_ColumnPropNameInTable="ElementsColumn" msprop:Generator_UserColumnName="Elements" type="xs:int" minOccurs="0" />
+              <xs:element name="DataSize" msprop:Generator_ColumnVarNameInTable="columnDataSize" msprop:Generator_ColumnPropNameInRow="DataSize" msprop:Generator_ColumnPropNameInTable="DataSizeColumn" msprop:Generator_UserColumnName="DataSize" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblStructures" msprop:Generator_TableClassName="tblStructuresDataTable" msprop:Generator_TableVarName="tabletblStructures" msprop:Generator_RowChangedName="tblStructuresRowChanged" msprop:Generator_TablePropName="tblStructures" msprop:Generator_RowDeletingName="tblStructuresRowDeleting" msprop:Generator_RowChangingName="tblStructuresRowChanging" msprop:Generator_RowEvHandlerName="tblStructuresRowChangeEventHandler" msprop:Generator_RowDeletedName="tblStructuresRowDeleted" msprop:Generator_RowClassName="tblStructuresRow" msprop:Generator_UserTableName="tblStructures" msprop:Generator_RowEvArgName="tblStructuresRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StructName" msprop:Generator_ColumnVarNameInTable="columnStructName" msprop:Generator_ColumnPropNameInRow="StructName" msprop:Generator_ColumnPropNameInTable="StructNameColumn" msprop:Generator_UserColumnName="StructName" type="xs:string" />
+              <xs:element name="StructUnion" msdata:Caption="DataColumn1" msprop:Generator_ColumnVarNameInTable="columnStructUnion" msprop:Generator_ColumnPropNameInRow="StructUnion" msprop:Generator_ColumnPropNameInTable="StructUnionColumn" msprop:Generator_UserColumnName="StructUnion" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="FieldCount" msprop:Generator_ColumnVarNameInTable="columnFieldCount" msprop:Generator_ColumnPropNameInRow="FieldCount" msprop:Generator_ColumnPropNameInTable="FieldCountColumn" msprop:Generator_UserColumnName="FieldCount" type="xs:int" minOccurs="0" />
+              <xs:element name="Elements" msprop:Generator_ColumnVarNameInTable="columnElements" msprop:Generator_ColumnPropNameInRow="Elements" msprop:Generator_ColumnPropNameInTable="ElementsColumn" msprop:Generator_UserColumnName="Elements" type="xs:int" minOccurs="0" />
+              <xs:element name="DataSize" msprop:Generator_ColumnVarNameInTable="columnDataSize" msprop:Generator_ColumnPropNameInRow="DataSize" msprop:Generator_ColumnPropNameInTable="DataSizeColumn" msprop:Generator_UserColumnName="DataSize" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblFields" msprop:Generator_TableClassName="tblFieldsDataTable" msprop:Generator_TableVarName="tabletblFields" msprop:Generator_TablePropName="tblFields" msprop:Generator_RowDeletingName="tblFieldsRowDeleting" msprop:Generator_RowChangingName="tblFieldsRowChanging" msprop:Generator_RowEvHandlerName="tblFieldsRowChangeEventHandler" msprop:Generator_RowDeletedName="tblFieldsRowDeleted" msprop:Generator_UserTableName="tblFields" msprop:Generator_RowChangedName="tblFieldsRowChanged" msprop:Generator_RowEvArgName="tblFieldsRowChangeEvent" msprop:Generator_RowClassName="tblFieldsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FieldKey" msprop:Generator_ColumnVarNameInTable="columnFieldKey" msprop:Generator_ColumnPropNameInRow="FieldKey" msprop:Generator_ColumnPropNameInTable="FieldKeyColumn" msprop:Generator_UserColumnName="FieldKey" type="xs:string" />
+              <xs:element name="FieldName" msprop:Generator_ColumnVarNameInTable="columnFieldName" msprop:Generator_ColumnPropNameInRow="FieldName" msprop:Generator_ColumnPropNameInTable="FieldNameColumn" msprop:Generator_UserColumnName="FieldName" type="xs:string" minOccurs="0" />
+              <xs:element name="ParentName" msprop:Generator_ColumnVarNameInTable="columnParentName" msprop:Generator_ColumnPropNameInRow="ParentName" msprop:Generator_ColumnPropNameInTable="ParentNameColumn" msprop:Generator_UserColumnName="ParentName" type="xs:string" minOccurs="0" />
+              <xs:element name="FieldIndex" msdata:Caption="DataColumn1" msprop:Generator_ColumnVarNameInTable="columnFieldIndex" msprop:Generator_ColumnPropNameInRow="FieldIndex" msprop:Generator_ColumnPropNameInTable="FieldIndexColumn" msprop:Generator_UserColumnName="FieldIndex" type="xs:int" minOccurs="0" />
+              <xs:element name="FieldType" msprop:Generator_ColumnVarNameInTable="columnFieldType" msprop:Generator_ColumnPropNameInRow="FieldType" msprop:Generator_ColumnPropNameInTable="FieldTypeColumn" msprop:Generator_UserColumnName="FieldType" type="xs:int" minOccurs="0" />
+              <xs:element name="FieldTypeName" msprop:Generator_ColumnVarNameInTable="columnFieldTypeName" msprop:Generator_ColumnPropNameInRow="FieldTypeName" msprop:Generator_ColumnPropNameInTable="FieldTypeNameColumn" msprop:Generator_UserColumnName="FieldTypeName" type="xs:string" minOccurs="0" />
+              <xs:element name="Elements" msprop:Generator_ColumnVarNameInTable="columnElements" msprop:Generator_ColumnPropNameInRow="Elements" msprop:Generator_ColumnPropNameInTable="ElementsColumn" msprop:Generator_UserColumnName="Elements" type="xs:int" minOccurs="0" />
+              <xs:element name="DataSize" msprop:Generator_ColumnVarNameInTable="columnDataSize" msprop:Generator_ColumnPropNameInRow="DataSize" msprop:Generator_ColumnPropNameInTable="DataSizeColumn" msprop:Generator_UserColumnName="DataSize" type="xs:int" minOccurs="0" />
+              <xs:element name="FieldByteOffset" msprop:Generator_ColumnVarNameInTable="columnFieldByteOffset" msprop:Generator_ColumnPropNameInRow="FieldByteOffset" msprop:Generator_ColumnPropNameInTable="FieldByteOffsetColumn" msprop:Generator_UserColumnName="FieldByteOffset" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblFieldsView" msprop:Generator_TableClassName="tblFieldsViewDataTable" msprop:Generator_TableVarName="tabletblFieldsView" msprop:Generator_RowChangedName="tblFieldsViewRowChanged" msprop:Generator_TablePropName="tblFieldsView" msprop:Generator_RowDeletingName="tblFieldsViewRowDeleting" msprop:Generator_RowChangingName="tblFieldsViewRowChanging" msprop:Generator_RowEvHandlerName="tblFieldsViewRowChangeEventHandler" msprop:Generator_RowDeletedName="tblFieldsViewRowDeleted" msprop:Generator_RowClassName="tblFieldsViewRow" msprop:Generator_UserTableName="tblFieldsView" msprop:Generator_RowEvArgName="tblFieldsViewRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FieldKey" msprop:Generator_ColumnVarNameInTable="columnFieldKey" msprop:Generator_ColumnPropNameInRow="FieldKey" msprop:Generator_ColumnPropNameInTable="FieldKeyColumn" msprop:Generator_UserColumnName="FieldKey" type="xs:string" />
+              <xs:element name="FieldName" msprop:Generator_ColumnVarNameInTable="columnFieldName" msprop:Generator_ColumnPropNameInRow="FieldName" msprop:Generator_ColumnPropNameInTable="FieldNameColumn" msprop:Generator_UserColumnName="FieldName" type="xs:string" minOccurs="0" />
+              <xs:element name="FieldIndex" msdata:Caption="DataColumn1" msprop:Generator_ColumnVarNameInTable="columnFieldIndex" msprop:Generator_ColumnPropNameInRow="FieldIndex" msprop:Generator_ColumnPropNameInTable="FieldIndexColumn" msprop:Generator_UserColumnName="FieldIndex" type="xs:int" minOccurs="0" />
+              <xs:element name="FieldTypeName" msprop:Generator_ColumnVarNameInTable="columnFieldTypeName" msprop:Generator_ColumnPropNameInRow="FieldTypeName" msprop:Generator_ColumnPropNameInTable="FieldTypeNameColumn" msprop:Generator_UserColumnName="FieldTypeName" type="xs:string" minOccurs="0" />
+              <xs:element name="Elements" msprop:Generator_ColumnVarNameInTable="columnElements" msprop:Generator_ColumnPropNameInRow="Elements" msprop:Generator_ColumnPropNameInTable="ElementsColumn" msprop:Generator_UserColumnName="Elements" type="xs:int" minOccurs="0" />
+              <xs:element name="DataSize" msprop:Generator_ColumnVarNameInTable="columnDataSize" msprop:Generator_ColumnPropNameInRow="DataSize" msprop:Generator_ColumnPropNameInTable="DataSizeColumn" msprop:Generator_UserColumnName="DataSize" type="xs:int" minOccurs="0" />
+              <xs:element name="FieldByteOffset" msprop:Generator_ColumnVarNameInTable="columnFieldByteOffset" msprop:Generator_ColumnPropNameInRow="FieldByteOffset" msprop:Generator_ColumnPropNameInTable="FieldByteOffsetColumn" msprop:Generator_UserColumnName="FieldByteOffset" type="xs:int" minOccurs="0" />
+              <xs:element name="DataType" msprop:Generator_ColumnVarNameInTable="columnDataType" msprop:Generator_ColumnPropNameInRow="DataType" msprop:Generator_ColumnPropNameInTable="DataTypeColumn" msprop:Generator_UserColumnName="DataType" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblTypeDefs" />
+      <xs:field xpath="mstns:TypeDefName" />
+    </xs:unique>
+    <xs:unique name="tblStructures_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblStructures" />
+      <xs:field xpath="mstns:StructName" />
+    </xs:unique>
+    <xs:unique name="tblFields_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblFields" />
+      <xs:field xpath="mstns:FieldKey" />
+    </xs:unique>
+    <xs:unique name="tblFieldsView_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblFieldsView" />
+      <xs:field xpath="mstns:FieldKey" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
