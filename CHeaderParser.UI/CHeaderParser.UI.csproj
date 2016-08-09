@@ -52,7 +52,8 @@
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Analyze.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>CHeaderParser.Program</StartupObject>
@@ -112,18 +113,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="TestFiles\video_interface.h" />
-    <None Include="TestFiles\video_interface.hh" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Analyze.ico" />
     <None Include="COPYING">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="COPYING.LESSER">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="TestFiles\video_interface_072416.hh" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CHeaderParser.Data\CHeaderParser.Data.csproj">
