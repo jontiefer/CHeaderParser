@@ -1,0 +1,8 @@
+[
+  {
+    "outputFileName": "build/css/custom.min.css",
+    "inputFiles": [
+      "build/css/custom.css"
+    ]
+  }
+]

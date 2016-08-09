@@ -1,0 +1,446 @@
+﻿<!--
+Original work Copyright (c) 2016 Aigars Silkalns & Colorlib
+
+Gentellela is licensed under The MIT License (MIT). Which means that you can use, copy, modify, merge, publish, distribute, sublicense, 
+and/or sell copies of the Software. But you always need to state that Colorlib is the original author of this template.
+-->
+
+<!--
+Modified work Copyright © 2016 Jonathan Tiefer - All Rights Reserved
+You may use, distribute and modify this code under the
+terms of the GNU Lesser General Public License (LGPL)
+
+You should have received a copy of the LGPL license with
+this file.
+-->
+
+<!--
+This file is part of CHeaderParser.  StructInfoLocal.html is derived from the Colorlib Gentellela template.
+
+CHeaderParser is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+CHeaderParser is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with CHeaderParser.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<!-- NOTE: Use this version of the StructInfo.html web page if you are wish to view the CHeaderParser web display without the use 
+    of a web server.   This version of the web page can function locally and will not result in any browser cross domain security issues.
+    The local version of the StructInfo web page will require the ExportStructData.js file to be present in the same directory, which will 
+    contain the exported structure/union data in JSON format and can be loaded statically with the page.  The javascript file will 
+    contain a global jsonDataExport variable containing the JSON formatted export data that the web page will use as its data source.    -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CHeaderParser Structure/Union List</title>
+
+    <!-- Bootstrap -->
+    <link href="./vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="./vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="./vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="./vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- Datatables -->
+    <link href="./vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="./vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="./vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="./vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="./vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+    <!-- Webkit -->
+      <link href="./vendors/webkit/vertscroll.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="./build/css/custom.min.css" rel="stylesheet">
+  </head>
+
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col menu_fixed" style="left: -30px; width: 300px">
+                <div class="scrollbar" id="style-7" style="left: 0px; width:100%; height:100%; background-color: transparent">
+                    <div class="left_col" style="left: 0px; width: 300px; height: auto">
+                        <!--<div class="left_col scroll-view">-->
+                        <div class="navbar nav_title" style="border: 0;">
+                            <a class="site_title"><span>Structures/Unions</span></a>
+                        </div>
+                        <div class="clearfix"></div>
+                        <br />
+                        <!-- sidebar menu -->
+                        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                            <div class="menu_section">
+                                <ul class="nav side-menu" id="structlist"></ul>
+                            </div>
+                        </div>
+                        <!-- /sidebar menu -->
+                    </div>
+                </div>
+            </div>
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <div id="infopanel" class="" style="position: absolute; left: 280px">
+                    <div class="page-title">
+                        <div class="title_left" style="width:50%">
+                            <h3>Structure/Union Information</h3>
+                        </div>
+                        <div class="title_right" style="width:50%">                            
+                            <div class="fieldBlock" style="width: 95%;margin-bottom: 1px">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="txtSearch" placeholder="Search">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button" id="btnSearch" onclick="SearchStructs()">Go!</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <div class="struct_title" id="structNameInfo">No Structure/Union Selected</div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <div class="fieldBlock" style="width: 200px">
+                                        <div class="infoheader">Structure Size (Bytes)</div>
+                                        <div class="infolabel" id="structSizeInfo">None</div>
+                                    </div>
+
+                                    <div class="fieldBlock" style="width: 200px">
+                                        <div class="infoheader">Field Count</div>
+                                        <div class="infolabel" id="structFieldCountInfo">0</div>
+                                    </div>
+
+                                    <div class="fieldBlock" style="width: 200px">
+                                        <div class="infoheader">Elements</div>
+                                        <div class="infolabel" id="structElementsInfo">0</div>
+                                    </div>
+
+                                    <table id="structs" class="table table-striped table-bordered jambo_table" style="width: 100%">
+                                        <!--<table id="datatable" class="table table-striped table-bordered">-->
+                                        <thead>
+                                            <tr>
+                                                <th>Offset</th>
+                                                <th>Type</th>
+                                                <th>Name</th>
+                                                <th>Index</th>
+                                                <th>Size</th>
+                                                <!--<th>Data Type</th>-->
+                                                <th>Elements</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /page content -->
+            <!-- footer content -->
+            <footer>
+                <div class="pull-right">
+                    CHeaderParser -
+                    Gentelella - Bootstrap Admin Template by <a href="./https://colorlib.com">Colorlib</a>
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="./vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="./vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="./vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="./vendors/nprogress/nprogress.js"></script>
+    <!-- iCheck -->
+    <script src="./vendors/iCheck/icheck.min.js"></script>
+    <!-- Datatables -->
+    <script src="./vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="./vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="./vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="./vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="./vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="./vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="./vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="./vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="./vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="./vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="./vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="./vendors/datatables.net-scroller/js/datatables.scroller.min.js"></script>
+    <script src="./vendors/jszip/dist/jszip.min.js"></script>
+    <!--<script src="./vendors/pdfmake/build/pdfmake.min.js"></script>-->
+    <!--<script src="./vendors/pdfmake/build/vfs_fonts.js"></script>-->
+    <!--DefiantJS-->
+    <script src="./vendors/defiantjs/defiant.min.js"></script>
+
+    <!-- Local Structure/Union Data Export Javascript Data File 
+        **NOTE: If the StructureInfo web page is being used locally, without a web server, then the exported JSON formatted 
+        structure/union data file will be embedded into a javascript file which will assign the JSON data to a global variable,
+        which then can be used locally within the web page, without the need to make remote AJAX calls to load the JSON data. -->
+    <script src="./ExportStructData.js"></script>
+        
+    <!-- Custom Theme Scripts -->
+    <script src="./build/js/custom.min.js"></script>
+    <!-- Defiant Structure template -->
+    <script type="defiant/xsl-template">
+        <xsl:template name="structList">
+            <xsl:for-each select="//structs">
+                <xsl:sort order="ascending" data-type="text" select="structname" />
+                <xsl:value-of select="structname" />
+            </xsl:for-each>
+        </xsl:template>
+    </script>
+
+    <!-- Window Functions -->
+    <script>
+        //window.onload = function (event) { ResizeWindow(); }
+        $(window).load(ResizeWindow);
+        window.onresize = function (event) { ResizeWindow(); };
+
+        function ResizeWindow() {
+            /// <summary>
+            /// Resizes the controls in the form based on the current size of the window, so the controls are properly sized in relation to the
+            /// fixed structure/union list panel.
+            /// </summary>
+
+            var divInfoPanel = document.getElementById("infopanel");
+
+            var panelWidth = window.innerWidth - 280 - 30;
+            divInfoPanel.setAttribute("style", "position: absolute; left: 280px; width: " + panelWidth + "px");            
+        };
+    </script>
+   
+    <!-- Structure List Loading and Structure Search Functions -->
+    <script>
+        function LoadStructList() {
+            /// <summary>
+            /// Loads all structures contained in the CHeaderParser structure export data file that is specified in the linked Export JSON data 
+            /// contained in the ExportStructData.js file.  If the file does not exist, then no structures will be loaded.
+            /// </summary>
+
+            if (jsonExportData === null)
+                return;
+                        
+            ClearForm();
+
+            var ulNav = document.getElementById("structlist");
+
+            var structName = "";
+
+            var items = [];
+
+            $.each(jsonExportData.structs, function (i, object) {
+                $.each(object, function (property, value) {
+                    if (property === 'structname')
+                        items.push("<a id='Load" + value + "' title='" + value + "' onclick=\"LoadStruct('" + value + "');return false;\"><i class=\"fa fa-table\"></i> " + value + "</a>");
+                });
+            });
+
+            for (var i = 0; i < items.length; i++) {
+                var li = document.createElement("li");
+                li.innerHTML = items[i];
+
+                ulNav.appendChild(li);
+            }//next i            
+        }
+
+        function SearchStructs() {
+            /// <summary>
+            /// Loads all structures from the selected Structure Data JSON export data file specified in the structures list of the web page
+            /// that match the search criteria specified in the Structure Search textbox in the form.  All structures contained in the export
+            /// file that match any part of the search expression will be loaded in the structures list in the web page.
+            /// </summary>
+
+            if (jsonExportData === null)
+                return;
+
+            var search = document.getElementById("txtSearch").value;
+            var ulNav = document.getElementById("structlist");
+
+            var structName = "";
+
+            var aryStructData = JSON.search(jsonExportData, '//structs[contains(structname, "' + search + '")]');
+
+            var items = [];
+
+            for (var i = 0; i < aryStructData.length; i++) {
+                items.push("<a id='Load" + aryStructData[i].structname + "' title='" + aryStructData[i].structname +
+                                 "' onclick=\"LoadStruct('" + aryStructData[i].structname + "');return false;\"><i class=\"fa fa-table\"></i> " +
+                                 aryStructData[i].structname + "</a>");
+            }//next i
+
+            $('#structlist').empty();
+
+            for (var i = 0; i < items.length; i++) {
+                var li = document.createElement("li");
+                li.innerHTML = items[i];
+
+                ulNav.appendChild(li);
+            }//next i
+        }
+
+        function ClearForm() {
+            /// <summary>
+            /// Clears all controls in the web page that contain information related to structures/unions.  The structure list as well as the
+            /// structure information controls and structure fields grid will be cleared of data.
+            /// </summary>
+            
+            $('#structlist').empty();
+
+            document.getElementById("structNameInfo").innerHTML = "No Structure/Union Loaded";
+            document.getElementById("structSizeInfo").innerHTML = "0";
+            document.getElementById("structFieldCountInfo").innerHTML = "0";
+            document.getElementById("structElementsInfo").innerHTML = "0";
+
+            tblStructs = $('#structs').dataTable().api();
+            tblStructs.clear().draw();            
+        }
+    </script>
+
+    <!-- Struct Selection and Struct DataTable Loading Functions -->
+    <script>
+        var tblStructs = null;
+
+        function LoadStruct(struct) {
+            /// <summary>
+            ///  Loads the information associated with the structure specified in the struct parameter into the appropriate controls of the
+            ///  web page.  The selected structure's record will be located in the Structure Data export JSON file.  Once the record is
+            ///  located all information about the structure/union and its associated fields will be loaded into the structure information UI
+            ///  controls and the structure fields data table control.
+            /// </summary>
+            /// <param name="struct" type="String">The name of the structure/union to load into the web page.</param>
+
+            if (jsonExportData === null)
+                return;
+
+            var structData = JSON.search(jsonExportData, '//structs[structname="' + struct + '"]');
+
+            var structNameInfo = document.getElementById("structNameInfo");
+            structNameInfo.innerHTML = struct;
+
+            var structSizeInfo = document.getElementById("structSizeInfo");
+            structSizeInfo.innerHTML = structData[0].structdata.datasize.toString();
+
+            var structFieldCountInfo = document.getElementById("structFieldCountInfo");
+            structFieldCountInfo.innerHTML = structData[0].structdata.fieldcount.toString();
+
+            var structElementsInfo = document.getElementById("structElementsInfo");
+            structElementsInfo.innerHTML = structData[0].structdata.elements.toString();
+
+
+            tblStructs = $('#structs').dataTable().api();
+            tblStructs.clear();
+
+            for (var i = 0; i < structData[0].structdata.fields.length; i++) {
+                tblStructs.row.add({
+                    "offset": structData[0].structdata.fields[i].offset.toString(),
+                    "fieldtypename": structData[0].structdata.fields[i].fieldtypename,
+                    "fieldname": structData[0].structdata.fields[i].fieldname,
+                    "fieldindex": structData[0].structdata.fields[i].fieldindex.toString(),
+                    "datasize": structData[0].structdata.fields[i].datasize.toString(),
+                    "elements": structData[0].structdata.fields[i].elements.toString()
+                }).draw();
+            }//next i
+        }
+
+        $(document).ready(function () {
+            var handleDataTableButtons = function () {
+                if ($("#structs").length) {
+                    $('#structs').DataTable({
+                        /*"ajax": {
+                            url: '/testquery1.json',
+                            dataSrc: 'video_task_data_base'
+                        },*/
+                        "columns": [
+                            { data: "offset" },
+                            { data: "fieldtypename" },
+                            { data: "fieldname" },
+                            { data: "fieldindex" },
+                            { data: "datasize" },
+                            { data: "elements" }
+                        ],
+                        "searching": false,
+                        "paging": false,
+                        dom: "Bfrtip",
+                        buttons: [
+                            {
+                                extend: "copy",
+                                className: "btn-sm"
+                            },
+                            {
+                                extend: "csv",
+                                className: "btn-sm"
+                            },
+                            {
+                                extend: "excel",
+                                className: "btn-sm"
+                            },
+                            {
+                                extend: "pdfHtml5",
+                                className: "btn-sm"
+                            },
+                            {
+                                extend: "print",
+                                className: "btn-sm"
+                            },
+                        ],
+                        responsive: true
+                    });
+                }
+            };
+
+            TableManageButtons = function () {
+                "use strict";
+                return {
+                    init: function () {
+                        handleDataTableButtons();
+                    }
+                };
+            }();
+
+            TableManageButtons.init();
+        });
+    </script>
+
+    <!-- Web Page Initialization and Startup Functions/Events -->
+    <script>
+        $(document).ready(function () {
+            LoadStructList();
+
+            $("#txtSearch").keyup(function (event) {
+                if (event.keyCode == 13) {
+                    SearchStructs();
+                }//end if
+            });
+        });
+    </script>
+</body>
+
+
+
+
+
+
+
+</html>

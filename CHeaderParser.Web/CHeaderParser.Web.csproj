@@ -1,0 +1,706 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7AFF93B1-9D96-47E1-A9C1-982A0F237062}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CHeaderParser.Web</RootNamespace>
+    <AssemblyName>CHeaderParser.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="COPYING.LESSER" />
+    <None Include="COPYING" />
+    <Content Include="packages.config" />
+    <Content Include="StructInfoLocal.html" />
+    <Content Include="vendors\bootstrap\.bower.json" />
+    <Content Include="vendors\bootstrap\bower.json" />
+    <Content Include="vendors\bootstrap\CHANGELOG.md" />
+    <Content Include="vendors\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="vendors\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="vendors\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="vendors\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="vendors\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="vendors\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="vendors\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="vendors\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="vendors\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="vendors\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="vendors\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="vendors\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="vendors\bootstrap\grunt\.jshintrc" />
+    <Content Include="vendors\bootstrap\grunt\configBridge.json" />
+    <Content Include="vendors\bootstrap\grunt\sauce_browsers.yml" />
+    <Content Include="vendors\bootstrap\js\.jscsrc" />
+    <Content Include="vendors\bootstrap\js\.jshintrc" />
+    <Content Include="vendors\bootstrap\less\.csscomb.json" />
+    <Content Include="vendors\bootstrap\less\.csslintrc" />
+    <Content Include="vendors\bootstrap\less\alerts.less" />
+    <Content Include="vendors\bootstrap\less\badges.less" />
+    <Content Include="vendors\bootstrap\less\bootstrap.less" />
+    <Content Include="vendors\bootstrap\less\breadcrumbs.less" />
+    <Content Include="vendors\bootstrap\less\button-groups.less" />
+    <Content Include="vendors\bootstrap\less\buttons.less" />
+    <Content Include="vendors\bootstrap\less\carousel.less" />
+    <Content Include="vendors\bootstrap\less\close.less" />
+    <Content Include="vendors\bootstrap\less\code.less" />
+    <Content Include="vendors\bootstrap\less\component-animations.less" />
+    <Content Include="vendors\bootstrap\less\dropdowns.less" />
+    <Content Include="vendors\bootstrap\less\forms.less" />
+    <Content Include="vendors\bootstrap\less\glyphicons.less" />
+    <Content Include="vendors\bootstrap\less\grid.less" />
+    <Content Include="vendors\bootstrap\less\input-groups.less" />
+    <Content Include="vendors\bootstrap\less\jumbotron.less" />
+    <Content Include="vendors\bootstrap\less\labels.less" />
+    <Content Include="vendors\bootstrap\less\list-group.less" />
+    <Content Include="vendors\bootstrap\less\media.less" />
+    <Content Include="vendors\bootstrap\less\mixins.less" />
+    <Content Include="vendors\bootstrap\less\mixins\alerts.less" />
+    <Content Include="vendors\bootstrap\less\mixins\background-variant.less" />
+    <Content Include="vendors\bootstrap\less\mixins\border-radius.less" />
+    <Content Include="vendors\bootstrap\less\mixins\buttons.less" />
+    <Content Include="vendors\bootstrap\less\mixins\center-block.less" />
+    <Content Include="vendors\bootstrap\less\mixins\clearfix.less" />
+    <Content Include="vendors\bootstrap\less\mixins\forms.less" />
+    <Content Include="vendors\bootstrap\less\mixins\gradients.less" />
+    <Content Include="vendors\bootstrap\less\mixins\grid-framework.less" />
+    <Content Include="vendors\bootstrap\less\mixins\grid.less" />
+    <Content Include="vendors\bootstrap\less\mixins\hide-text.less" />
+    <Content Include="vendors\bootstrap\less\mixins\image.less" />
+    <Content Include="vendors\bootstrap\less\mixins\labels.less" />
+    <Content Include="vendors\bootstrap\less\mixins\list-group.less" />
+    <Content Include="vendors\bootstrap\less\mixins\nav-divider.less" />
+    <Content Include="vendors\bootstrap\less\mixins\nav-vertical-align.less" />
+    <Content Include="vendors\bootstrap\less\mixins\opacity.less" />
+    <Content Include="vendors\bootstrap\less\mixins\pagination.less" />
+    <Content Include="vendors\bootstrap\less\mixins\panels.less" />
+    <Content Include="vendors\bootstrap\less\mixins\progress-bar.less" />
+    <Content Include="vendors\bootstrap\less\mixins\reset-filter.less" />
+    <Content Include="vendors\bootstrap\less\mixins\reset-text.less" />
+    <Content Include="vendors\bootstrap\less\mixins\resize.less" />
+    <Content Include="vendors\bootstrap\less\mixins\responsive-visibility.less" />
+    <Content Include="vendors\bootstrap\less\mixins\size.less" />
+    <Content Include="vendors\bootstrap\less\mixins\tab-focus.less" />
+    <Content Include="vendors\bootstrap\less\mixins\table-row.less" />
+    <Content Include="vendors\bootstrap\less\mixins\text-emphasis.less" />
+    <Content Include="vendors\bootstrap\less\mixins\text-overflow.less" />
+    <Content Include="vendors\bootstrap\less\mixins\vendor-prefixes.less" />
+    <Content Include="vendors\bootstrap\less\modals.less" />
+    <Content Include="vendors\bootstrap\less\navbar.less" />
+    <Content Include="vendors\bootstrap\less\navs.less" />
+    <Content Include="vendors\bootstrap\less\normalize.less" />
+    <Content Include="vendors\bootstrap\less\pager.less" />
+    <Content Include="vendors\bootstrap\less\pagination.less" />
+    <Content Include="vendors\bootstrap\less\panels.less" />
+    <Content Include="vendors\bootstrap\less\popovers.less" />
+    <Content Include="vendors\bootstrap\less\print.less" />
+    <Content Include="vendors\bootstrap\less\progress-bars.less" />
+    <Content Include="vendors\bootstrap\less\responsive-embed.less" />
+    <Content Include="vendors\bootstrap\less\responsive-utilities.less" />
+    <Content Include="vendors\bootstrap\less\scaffolding.less" />
+    <Content Include="vendors\bootstrap\less\tables.less" />
+    <Content Include="vendors\bootstrap\less\theme.less" />
+    <Content Include="vendors\bootstrap\less\thumbnails.less" />
+    <Content Include="vendors\bootstrap\less\tooltip.less" />
+    <Content Include="vendors\bootstrap\less\type.less" />
+    <Content Include="vendors\bootstrap\less\utilities.less" />
+    <Content Include="vendors\bootstrap\less\variables.less" />
+    <Content Include="vendors\bootstrap\less\wells.less" />
+    <Content Include="vendors\bootstrap\LICENSE" />
+    <Content Include="vendors\bootstrap\nuget\bootstrap.less.nuspec" />
+    <Content Include="vendors\bootstrap\nuget\bootstrap.nuspec" />
+    <Content Include="vendors\bootstrap\nuget\MyGet.ps1" />
+    <Content Include="vendors\bootstrap\package.json" />
+    <Content Include="vendors\bootstrap\README.md" />
+    <Content Include="vendors\defiantjs\defiant.js" />
+    <Content Include="vendors\defiantjs\defiant.min.js" />
+    <Content Include="vendors\font-awesome\.bower.json" />
+    <Content Include="vendors\font-awesome\.npmignore" />
+    <Content Include="vendors\font-awesome\bower.json" />
+    <Content Include="vendors\font-awesome\css\font-awesome.css.map" />
+    <Content Include="vendors\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="vendors\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="vendors\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="vendors\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="vendors\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="vendors\font-awesome\less\animated.less" />
+    <Content Include="vendors\font-awesome\less\bordered-pulled.less" />
+    <Content Include="vendors\font-awesome\less\core.less" />
+    <Content Include="vendors\font-awesome\less\fixed-width.less" />
+    <Content Include="vendors\font-awesome\less\font-awesome.less" />
+    <Content Include="vendors\font-awesome\less\icons.less" />
+    <Content Include="vendors\font-awesome\less\larger.less" />
+    <Content Include="vendors\font-awesome\less\list.less" />
+    <Content Include="vendors\font-awesome\less\mixins.less" />
+    <Content Include="vendors\font-awesome\less\path.less" />
+    <Content Include="vendors\font-awesome\less\rotated-flipped.less" />
+    <Content Include="vendors\font-awesome\less\screen-reader.less" />
+    <Content Include="vendors\font-awesome\less\stacked.less" />
+    <Content Include="vendors\font-awesome\less\variables.less" />
+    <Content Include="vendors\font-awesome\scss\font-awesome.scss" />
+    <Content Include="vendors\font-awesome\scss\_animated.scss" />
+    <Content Include="vendors\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="vendors\font-awesome\scss\_core.scss" />
+    <Content Include="vendors\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="vendors\font-awesome\scss\_icons.scss" />
+    <Content Include="vendors\font-awesome\scss\_larger.scss" />
+    <Content Include="vendors\font-awesome\scss\_list.scss" />
+    <Content Include="vendors\font-awesome\scss\_mixins.scss" />
+    <Content Include="vendors\font-awesome\scss\_path.scss" />
+    <Content Include="vendors\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="vendors\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="vendors\font-awesome\scss\_stacked.scss" />
+    <Content Include="vendors\font-awesome\scss\_variables.scss" />
+    <Content Include="vendors\nprogress\.bower.json" />
+    <Content Include="vendors\nprogress\bower.json" />
+    <Content Include="vendors\nprogress\component.json" />
+    <Content Include="vendors\nprogress\History.md" />
+    <Content Include="vendors\nprogress\License.md" />
+    <Content Include="vendors\nprogress\Notes.md" />
+    <Content Include="vendors\nprogress\Readme.md" />
+    <Content Include="vendors\iCheck\.bower.json" />
+    <Content Include="vendors\iCheck\bower.json" />
+    <Content Include="vendors\iCheck\icheck.jquery.json" />
+    <Content Include="vendors\datatables.net-bs\.bower.json" />
+    <Content Include="vendors\datatables.net-bs\bower.json" />
+    <Content Include="vendors\datatables.net-bs\Readme.md" />
+    <Content Include="vendors\datatables.net-buttons-bs\.bower.json" />
+    <Content Include="vendors\datatables.net-buttons-bs\bower.json" />
+    <Content Include="vendors\datatables.net-buttons-bs\Readme.md" />
+    <Content Include="vendors\datatables.net-fixedheader-bs\.bower.json" />
+    <Content Include="vendors\datatables.net-fixedheader-bs\bower.json" />
+    <Content Include="vendors\datatables.net-fixedheader-bs\Readme.md" />
+    <Content Include="vendors\datatables.net-responsive-bs\.bower.json" />
+    <Content Include="vendors\datatables.net-responsive-bs\bower.json" />
+    <Content Include="vendors\datatables.net-responsive-bs\Readme.md" />
+    <Content Include="vendors\datatables.net-scroller-bs\.bower.json" />
+    <Content Include="vendors\datatables.net-scroller-bs\bower.json" />
+    <Content Include="vendors\datatables.net-scroller-bs\Readme.md" />
+    <Content Include="src\scss\custom.scss" />
+    <Content Include="vendors\jquery\.bower.json" />
+    <Content Include="vendors\jquery\bower.json" />
+    <Content Include="vendors\jquery\dist\jquery.min.map" />
+    <Content Include="vendors\jquery\external\sizzle\dist\sizzle.min.map" />
+    <Content Include="vendors\jquery\README.md" />
+    <Content Include="vendors\jquery\src\.jshintrc" />
+    <Content Include="vendors\fastclick\.bower.json" />
+    <Content Include="vendors\fastclick\bower.json" />
+    <Content Include="vendors\fastclick\LICENSE" />
+    <Content Include="vendors\fastclick\README.md" />
+    <Content Include="vendors\datatables.net\.bower.json" />
+    <Content Include="vendors\datatables.net\bower.json" />
+    <Content Include="vendors\datatables.net\Readme.md" />
+    <Content Include="vendors\datatables.net-buttons\.bower.json" />
+    <Content Include="vendors\datatables.net-buttons\bower.json" />
+    <Content Include="vendors\datatables.net-buttons\Readme.md" />
+    <Content Include="vendors\datatables.net-fixedheader\.bower.json" />
+    <Content Include="vendors\datatables.net-fixedheader\bower.json" />
+    <Content Include="vendors\datatables.net-fixedheader\Readme.md" />
+    <Content Include="vendors\datatables.net-keytable\.bower.json" />
+    <Content Include="vendors\datatables.net-keytable\bower.json" />
+    <Content Include="vendors\datatables.net-keytable\Readme.md" />
+    <Content Include="vendors\datatables.net-responsive\.bower.json" />
+    <Content Include="vendors\datatables.net-responsive\bower.json" />
+    <Content Include="vendors\datatables.net-responsive\Readme.md" />
+    <Content Include="vendors\datatables.net-scroller\.bower.json" />
+    <Content Include="vendors\datatables.net-scroller\bower.json" />
+    <Content Include="vendors\datatables.net-scroller\Readme.md" />
+    <Content Include="vendors\jszip\.bower.json" />
+    <Content Include="vendors\jszip\bower.json" />
+    <Content Include="vendors\jszip\CHANGES.md" />
+    <Content Include="vendors\jszip\component.json" />
+    <Content Include="vendors\jszip\documentation\api_jszip.md" />
+    <Content Include="vendors\jszip\documentation\api_jszip\constructor.md" />
+    <Content Include="vendors\jszip\documentation\api_jszip\constructor_load.md" />
+    <Content Include="vendors\jszip\documentation\api_jszip\file_data.md" />
+    <Content Include="vendors\jszip\documentation\api_jszip\file_name.md" />
+    <Content Include="vendors\jszip\documentation\api_jszip\file_regex.md" />
+    <Content Include="vendors\jszip\documentation\api_jszip\filter.md" />
+    <Content Include="vendors\jszip\documentation\api_jszip\folder_data.md" />
+    <Content Include="vendors\jszip\documentation\api_jszip\folder_regex.md" />
+    <Content Include="vendors\jszip\documentation\api_jszip\generate.md" />
+    <Content Include="vendors\jszip\documentation\api_jszip\load.md" />
+    <Content Include="vendors\jszip\documentation\api_jszip\remove.md" />
+    <Content Include="vendors\jszip\documentation\api_jszip\support.md" />
+    <Content Include="vendors\jszip\documentation\api_zipobject.md" />
+    <Content Include="vendors\jszip\documentation\contributing.md" />
+    <Content Include="vendors\jszip\documentation\examples.md" />
+    <Content Include="vendors\jszip\documentation\faq.md" />
+    <Content Include="vendors\jszip\documentation\howto\read_zip.md" />
+    <Content Include="vendors\jszip\documentation\howto\write_zip.md" />
+    <Content Include="vendors\jszip\documentation\limitations.md" />
+    <Content Include="vendors\jszip\documentation\upgrade_guide.md" />
+    <Content Include="vendors\jszip\LICENSE.markdown" />
+    <Content Include="vendors\jszip\package.json" />
+    <Content Include="vendors\jszip\README.markdown" />
+    <Content Include="vendors\jszip\_config.yml" />
+    <None Include="bundleconfig.json" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="build\css\custom.css" />
+    <Content Include="build\css\custom.min.css">
+      <DependentUpon>custom.css</DependentUpon>
+    </Content>
+    <Content Include="build\js\custom.js" />
+    <Content Include="build\js\custom.min.js" />
+    <Content Include="src\js\custom.js" />
+    <Content Include="src\js\helpers\smartresize.js" />
+    <Content Include="StructInfo.html" />
+    <Content Include="vendors\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="vendors\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="vendors\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="vendors\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="vendors\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="vendors\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="vendors\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="vendors\bootstrap\dist\js\npm.js" />
+    <Content Include="vendors\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="vendors\bootstrap\Gruntfile.js" />
+    <Content Include="vendors\bootstrap\grunt\bs-commonjs-generator.js" />
+    <Content Include="vendors\bootstrap\grunt\bs-glyphicons-data-generator.js" />
+    <Content Include="vendors\bootstrap\grunt\bs-lessdoc-parser.js" />
+    <Content Include="vendors\bootstrap\grunt\bs-raw-files-generator.js" />
+    <Content Include="vendors\bootstrap\js\affix.js" />
+    <Content Include="vendors\bootstrap\js\alert.js" />
+    <Content Include="vendors\bootstrap\js\button.js" />
+    <Content Include="vendors\bootstrap\js\carousel.js" />
+    <Content Include="vendors\bootstrap\js\collapse.js" />
+    <Content Include="vendors\bootstrap\js\dropdown.js" />
+    <Content Include="vendors\bootstrap\js\modal.js" />
+    <Content Include="vendors\bootstrap\js\popover.js" />
+    <Content Include="vendors\bootstrap\js\scrollspy.js" />
+    <Content Include="vendors\bootstrap\js\tab.js" />
+    <Content Include="vendors\bootstrap\js\tooltip.js" />
+    <Content Include="vendors\bootstrap\js\transition.js" />
+    <Content Include="vendors\bootstrap\package.js" />
+    <Content Include="vendors\datatables.net-bs\css\dataTables.bootstrap.css" />
+    <Content Include="vendors\datatables.net-bs\css\dataTables.bootstrap.min.css" />
+    <Content Include="vendors\datatables.net-bs\js\dataTables.bootstrap.js" />
+    <Content Include="vendors\datatables.net-bs\js\dataTables.bootstrap.min.js" />
+    <Content Include="vendors\datatables.net-bs\License.txt" />
+    <Content Include="vendors\datatables.net-buttons-bs\css\buttons.bootstrap.css" />
+    <Content Include="vendors\datatables.net-buttons-bs\css\buttons.bootstrap.min.css" />
+    <Content Include="vendors\datatables.net-buttons-bs\js\buttons.bootstrap.js" />
+    <Content Include="vendors\datatables.net-buttons-bs\js\buttons.bootstrap.min.js" />
+    <Content Include="vendors\datatables.net-buttons-bs\License.txt" />
+    <Content Include="vendors\datatables.net-buttons\js\buttons.colVis.js" />
+    <Content Include="vendors\datatables.net-buttons\js\buttons.colVis.min.js" />
+    <Content Include="vendors\datatables.net-buttons\js\buttons.flash.js" />
+    <Content Include="vendors\datatables.net-buttons\js\buttons.flash.min.js" />
+    <Content Include="vendors\datatables.net-buttons\js\buttons.html5.js" />
+    <Content Include="vendors\datatables.net-buttons\js\buttons.html5.min.js" />
+    <Content Include="vendors\datatables.net-buttons\js\buttons.print.js" />
+    <Content Include="vendors\datatables.net-buttons\js\buttons.print.min.js" />
+    <Content Include="vendors\datatables.net-buttons\js\dataTables.buttons.js" />
+    <Content Include="vendors\datatables.net-buttons\js\dataTables.buttons.min.js" />
+    <Content Include="vendors\datatables.net-buttons\License.txt" />
+    <Content Include="vendors\datatables.net-fixedheader-bs\css\fixedHeader.bootstrap.css" />
+    <Content Include="vendors\datatables.net-fixedheader-bs\css\fixedHeader.bootstrap.min.css" />
+    <Content Include="vendors\datatables.net-fixedheader-bs\License.txt" />
+    <Content Include="vendors\datatables.net-fixedheader\js\dataTables.fixedHeader.js" />
+    <Content Include="vendors\datatables.net-fixedheader\js\dataTables.fixedHeader.min.js" />
+    <Content Include="vendors\datatables.net-fixedheader\License.txt" />
+    <Content Include="vendors\datatables.net-keytable\js\dataTables.keyTable.js" />
+    <Content Include="vendors\datatables.net-keytable\js\dataTables.keyTable.min.js" />
+    <Content Include="vendors\datatables.net-keytable\License.txt" />
+    <Content Include="vendors\datatables.net-responsive-bs\css\responsive.bootstrap.css" />
+    <Content Include="vendors\datatables.net-responsive-bs\css\responsive.bootstrap.min.css" />
+    <Content Include="vendors\datatables.net-responsive-bs\js\responsive.bootstrap.js" />
+    <Content Include="vendors\datatables.net-responsive-bs\License.txt" />
+    <Content Include="vendors\datatables.net-responsive\js\dataTables.responsive.js" />
+    <Content Include="vendors\datatables.net-responsive\js\dataTables.responsive.min.js" />
+    <Content Include="vendors\datatables.net-responsive\License.txt" />
+    <Content Include="vendors\datatables.net-scroller-bs\css\scroller.bootstrap.css" />
+    <Content Include="vendors\datatables.net-scroller-bs\css\scroller.bootstrap.min.css" />
+    <Content Include="vendors\datatables.net-scroller-bs\License.txt" />
+    <Content Include="vendors\datatables.net-scroller\js\dataTables.scroller.js" />
+    <Content Include="vendors\datatables.net-scroller\js\dataTables.scroller.min.js" />
+    <Content Include="vendors\datatables.net-scroller\License.txt" />
+    <Content Include="vendors\datatables.net\js\jquery.dataTables.js" />
+    <Content Include="vendors\datatables.net\js\jquery.dataTables.min.js" />
+    <Content Include="vendors\datatables.net\License.txt" />
+    <Content Include="vendors\fastclick\lib\fastclick.js" />
+    <Content Include="vendors\font-awesome\.gitignore" />
+    <Content Include="vendors\font-awesome\css\font-awesome.css" />
+    <Content Include="vendors\font-awesome\css\font-awesome.min.css" />
+    <Content Include="vendors\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="vendors\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="vendors\iCheck\icheck.js" />
+    <Content Include="vendors\iCheck\icheck.min.js" />
+    <Content Include="vendors\iCheck\skins\all.css" />
+    <Content Include="vendors\iCheck\skins\flat\aero%402x.png" />
+    <Content Include="vendors\iCheck\skins\flat\aero.css" />
+    <Content Include="vendors\iCheck\skins\flat\aero.png" />
+    <Content Include="vendors\iCheck\skins\flat\blue%402x.png" />
+    <Content Include="vendors\iCheck\skins\flat\blue.css" />
+    <Content Include="vendors\iCheck\skins\flat\blue.png" />
+    <Content Include="vendors\iCheck\skins\flat\flat%402x.png" />
+    <Content Include="vendors\iCheck\skins\flat\flat.css" />
+    <Content Include="vendors\iCheck\skins\flat\flat.png" />
+    <Content Include="vendors\iCheck\skins\flat\green%402x.png" />
+    <Content Include="vendors\iCheck\skins\flat\green.css" />
+    <Content Include="vendors\iCheck\skins\flat\green.png" />
+    <Content Include="vendors\iCheck\skins\flat\grey%402x.png" />
+    <Content Include="vendors\iCheck\skins\flat\grey.css" />
+    <Content Include="vendors\iCheck\skins\flat\grey.png" />
+    <Content Include="vendors\iCheck\skins\flat\orange%402x.png" />
+    <Content Include="vendors\iCheck\skins\flat\orange.css" />
+    <Content Include="vendors\iCheck\skins\flat\orange.png" />
+    <Content Include="vendors\iCheck\skins\flat\pink%402x.png" />
+    <Content Include="vendors\iCheck\skins\flat\pink.css" />
+    <Content Include="vendors\iCheck\skins\flat\pink.png" />
+    <Content Include="vendors\iCheck\skins\flat\purple%402x.png" />
+    <Content Include="vendors\iCheck\skins\flat\purple.css" />
+    <Content Include="vendors\iCheck\skins\flat\purple.png" />
+    <Content Include="vendors\iCheck\skins\flat\red%402x.png" />
+    <Content Include="vendors\iCheck\skins\flat\red.css" />
+    <Content Include="vendors\iCheck\skins\flat\red.png" />
+    <Content Include="vendors\iCheck\skins\flat\yellow%402x.png" />
+    <Content Include="vendors\iCheck\skins\flat\yellow.css" />
+    <Content Include="vendors\iCheck\skins\flat\yellow.png" />
+    <Content Include="vendors\iCheck\skins\flat\_all.css" />
+    <Content Include="vendors\iCheck\skins\futurico\futurico%402x.png" />
+    <Content Include="vendors\iCheck\skins\futurico\futurico.css" />
+    <Content Include="vendors\iCheck\skins\futurico\futurico.png" />
+    <Content Include="vendors\iCheck\skins\line\aero.css" />
+    <Content Include="vendors\iCheck\skins\line\blue.css" />
+    <Content Include="vendors\iCheck\skins\line\green.css" />
+    <Content Include="vendors\iCheck\skins\line\grey.css" />
+    <Content Include="vendors\iCheck\skins\line\line%402x.png" />
+    <Content Include="vendors\iCheck\skins\line\line.css" />
+    <Content Include="vendors\iCheck\skins\line\line.png" />
+    <Content Include="vendors\iCheck\skins\line\orange.css" />
+    <Content Include="vendors\iCheck\skins\line\pink.css" />
+    <Content Include="vendors\iCheck\skins\line\purple.css" />
+    <Content Include="vendors\iCheck\skins\line\red.css" />
+    <Content Include="vendors\iCheck\skins\line\yellow.css" />
+    <Content Include="vendors\iCheck\skins\line\_all.css" />
+    <Content Include="vendors\iCheck\skins\minimal\aero%402x.png" />
+    <Content Include="vendors\iCheck\skins\minimal\aero.css" />
+    <Content Include="vendors\iCheck\skins\minimal\aero.png" />
+    <Content Include="vendors\iCheck\skins\minimal\blue%402x.png" />
+    <Content Include="vendors\iCheck\skins\minimal\blue.css" />
+    <Content Include="vendors\iCheck\skins\minimal\blue.png" />
+    <Content Include="vendors\iCheck\skins\minimal\green%402x.png" />
+    <Content Include="vendors\iCheck\skins\minimal\green.css" />
+    <Content Include="vendors\iCheck\skins\minimal\green.png" />
+    <Content Include="vendors\iCheck\skins\minimal\grey%402x.png" />
+    <Content Include="vendors\iCheck\skins\minimal\grey.css" />
+    <Content Include="vendors\iCheck\skins\minimal\grey.png" />
+    <Content Include="vendors\iCheck\skins\minimal\minimal%402x.png" />
+    <Content Include="vendors\iCheck\skins\minimal\minimal.css" />
+    <Content Include="vendors\iCheck\skins\minimal\minimal.png" />
+    <Content Include="vendors\iCheck\skins\minimal\orange%402x.png" />
+    <Content Include="vendors\iCheck\skins\minimal\orange.css" />
+    <Content Include="vendors\iCheck\skins\minimal\orange.png" />
+    <Content Include="vendors\iCheck\skins\minimal\pink%402x.png" />
+    <Content Include="vendors\iCheck\skins\minimal\pink.css" />
+    <Content Include="vendors\iCheck\skins\minimal\pink.png" />
+    <Content Include="vendors\iCheck\skins\minimal\purple%402x.png" />
+    <Content Include="vendors\iCheck\skins\minimal\purple.css" />
+    <Content Include="vendors\iCheck\skins\minimal\purple.png" />
+    <Content Include="vendors\iCheck\skins\minimal\red%402x.png" />
+    <Content Include="vendors\iCheck\skins\minimal\red.css" />
+    <Content Include="vendors\iCheck\skins\minimal\red.png" />
+    <Content Include="vendors\iCheck\skins\minimal\yellow%402x.png" />
+    <Content Include="vendors\iCheck\skins\minimal\yellow.css" />
+    <Content Include="vendors\iCheck\skins\minimal\yellow.png" />
+    <Content Include="vendors\iCheck\skins\minimal\_all.css" />
+    <Content Include="vendors\iCheck\skins\polaris\polaris%402x.png" />
+    <Content Include="vendors\iCheck\skins\polaris\polaris.css" />
+    <Content Include="vendors\iCheck\skins\polaris\polaris.png" />
+    <Content Include="vendors\iCheck\skins\square\aero%402x.png" />
+    <Content Include="vendors\iCheck\skins\square\aero.css" />
+    <Content Include="vendors\iCheck\skins\square\aero.png" />
+    <Content Include="vendors\iCheck\skins\square\blue%402x.png" />
+    <Content Include="vendors\iCheck\skins\square\blue.css" />
+    <Content Include="vendors\iCheck\skins\square\blue.png" />
+    <Content Include="vendors\iCheck\skins\square\green%402x.png" />
+    <Content Include="vendors\iCheck\skins\square\green.css" />
+    <Content Include="vendors\iCheck\skins\square\green.png" />
+    <Content Include="vendors\iCheck\skins\square\grey%402x.png" />
+    <Content Include="vendors\iCheck\skins\square\grey.css" />
+    <Content Include="vendors\iCheck\skins\square\grey.png" />
+    <Content Include="vendors\iCheck\skins\square\orange%402x.png" />
+    <Content Include="vendors\iCheck\skins\square\orange.css" />
+    <Content Include="vendors\iCheck\skins\square\orange.png" />
+    <Content Include="vendors\iCheck\skins\square\pink%402x.png" />
+    <Content Include="vendors\iCheck\skins\square\pink.css" />
+    <Content Include="vendors\iCheck\skins\square\pink.png" />
+    <Content Include="vendors\iCheck\skins\square\purple%402x.png" />
+    <Content Include="vendors\iCheck\skins\square\purple.css" />
+    <Content Include="vendors\iCheck\skins\square\purple.png" />
+    <Content Include="vendors\iCheck\skins\square\red%402x.png" />
+    <Content Include="vendors\iCheck\skins\square\red.css" />
+    <Content Include="vendors\iCheck\skins\square\red.png" />
+    <Content Include="vendors\iCheck\skins\square\square%402x.png" />
+    <Content Include="vendors\iCheck\skins\square\square.css" />
+    <Content Include="vendors\iCheck\skins\square\square.png" />
+    <Content Include="vendors\iCheck\skins\square\yellow%402x.png" />
+    <Content Include="vendors\iCheck\skins\square\yellow.css" />
+    <Content Include="vendors\iCheck\skins\square\yellow.png" />
+    <Content Include="vendors\iCheck\skins\square\_all.css" />
+    <Content Include="vendors\jquery\AUTHORS.txt" />
+    <Content Include="vendors\jquery\dist\jquery.js" />
+    <Content Include="vendors\jquery\dist\jquery.min.js" />
+    <Content Include="vendors\jquery\external\sizzle\dist\sizzle.js" />
+    <Content Include="vendors\jquery\external\sizzle\dist\sizzle.min.js" />
+    <Content Include="vendors\jquery\external\sizzle\LICENSE.txt" />
+    <Content Include="vendors\jquery\LICENSE.txt" />
+    <Content Include="vendors\jquery\src\ajax.js" />
+    <Content Include="vendors\jquery\src\ajax\jsonp.js" />
+    <Content Include="vendors\jquery\src\ajax\load.js" />
+    <Content Include="vendors\jquery\src\ajax\parseJSON.js" />
+    <Content Include="vendors\jquery\src\ajax\parseXML.js" />
+    <Content Include="vendors\jquery\src\ajax\script.js" />
+    <Content Include="vendors\jquery\src\ajax\var\location.js" />
+    <Content Include="vendors\jquery\src\ajax\var\nonce.js" />
+    <Content Include="vendors\jquery\src\ajax\var\rquery.js" />
+    <Content Include="vendors\jquery\src\ajax\xhr.js" />
+    <Content Include="vendors\jquery\src\attributes.js" />
+    <Content Include="vendors\jquery\src\attributes\attr.js" />
+    <Content Include="vendors\jquery\src\attributes\classes.js" />
+    <Content Include="vendors\jquery\src\attributes\prop.js" />
+    <Content Include="vendors\jquery\src\attributes\support.js" />
+    <Content Include="vendors\jquery\src\attributes\val.js" />
+    <Content Include="vendors\jquery\src\callbacks.js" />
+    <Content Include="vendors\jquery\src\core.js" />
+    <Content Include="vendors\jquery\src\core\access.js" />
+    <Content Include="vendors\jquery\src\core\init.js" />
+    <Content Include="vendors\jquery\src\core\parseHTML.js" />
+    <Content Include="vendors\jquery\src\core\ready.js" />
+    <Content Include="vendors\jquery\src\core\var\rsingleTag.js" />
+    <Content Include="vendors\jquery\src\css.js" />
+    <Content Include="vendors\jquery\src\css\addGetHookIf.js" />
+    <Content Include="vendors\jquery\src\css\adjustCSS.js" />
+    <Content Include="vendors\jquery\src\css\curCSS.js" />
+    <Content Include="vendors\jquery\src\css\defaultDisplay.js" />
+    <Content Include="vendors\jquery\src\css\hiddenVisibleSelectors.js" />
+    <Content Include="vendors\jquery\src\css\showHide.js" />
+    <Content Include="vendors\jquery\src\css\support.js" />
+    <Content Include="vendors\jquery\src\css\var\cssExpand.js" />
+    <Content Include="vendors\jquery\src\css\var\getStyles.js" />
+    <Content Include="vendors\jquery\src\css\var\isHidden.js" />
+    <Content Include="vendors\jquery\src\css\var\rmargin.js" />
+    <Content Include="vendors\jquery\src\css\var\rnumnonpx.js" />
+    <Content Include="vendors\jquery\src\css\var\swap.js" />
+    <Content Include="vendors\jquery\src\data.js" />
+    <Content Include="vendors\jquery\src\data\Data.js" />
+    <Content Include="vendors\jquery\src\data\var\acceptData.js" />
+    <Content Include="vendors\jquery\src\data\var\dataPriv.js" />
+    <Content Include="vendors\jquery\src\data\var\dataUser.js" />
+    <Content Include="vendors\jquery\src\deferred.js" />
+    <Content Include="vendors\jquery\src\deprecated.js" />
+    <Content Include="vendors\jquery\src\dimensions.js" />
+    <Content Include="vendors\jquery\src\effects.js" />
+    <Content Include="vendors\jquery\src\effects\animatedSelector.js" />
+    <Content Include="vendors\jquery\src\effects\Tween.js" />
+    <Content Include="vendors\jquery\src\event.js" />
+    <Content Include="vendors\jquery\src\event\ajax.js" />
+    <Content Include="vendors\jquery\src\event\alias.js" />
+    <Content Include="vendors\jquery\src\event\focusin.js" />
+    <Content Include="vendors\jquery\src\event\support.js" />
+    <Content Include="vendors\jquery\src\event\trigger.js" />
+    <Content Include="vendors\jquery\src\exports\amd.js" />
+    <Content Include="vendors\jquery\src\exports\global.js" />
+    <Content Include="vendors\jquery\src\intro.js" />
+    <Content Include="vendors\jquery\src\jquery.js" />
+    <Content Include="vendors\jquery\src\manipulation.js" />
+    <Content Include="vendors\jquery\src\manipulation\buildFragment.js" />
+    <Content Include="vendors\jquery\src\manipulation\getAll.js" />
+    <Content Include="vendors\jquery\src\manipulation\setGlobalEval.js" />
+    <Content Include="vendors\jquery\src\manipulation\support.js" />
+    <Content Include="vendors\jquery\src\manipulation\var\rcheckableType.js" />
+    <Content Include="vendors\jquery\src\manipulation\var\rscriptType.js" />
+    <Content Include="vendors\jquery\src\manipulation\var\rtagName.js" />
+    <Content Include="vendors\jquery\src\manipulation\wrapMap.js" />
+    <Content Include="vendors\jquery\src\manipulation\_evalUrl.js" />
+    <Content Include="vendors\jquery\src\offset.js" />
+    <Content Include="vendors\jquery\src\outro.js" />
+    <Content Include="vendors\jquery\src\queue.js" />
+    <Content Include="vendors\jquery\src\queue\delay.js" />
+    <Content Include="vendors\jquery\src\selector-native.js" />
+    <Content Include="vendors\jquery\src\selector-sizzle.js" />
+    <Content Include="vendors\jquery\src\selector.js" />
+    <Content Include="vendors\jquery\src\serialize.js" />
+    <Content Include="vendors\jquery\src\traversing.js" />
+    <Content Include="vendors\jquery\src\traversing\findFilter.js" />
+    <Content Include="vendors\jquery\src\traversing\var\dir.js" />
+    <Content Include="vendors\jquery\src\traversing\var\rneedsContext.js" />
+    <Content Include="vendors\jquery\src\traversing\var\siblings.js" />
+    <Content Include="vendors\jquery\src\var\arr.js" />
+    <Content Include="vendors\jquery\src\var\class2type.js" />
+    <Content Include="vendors\jquery\src\var\concat.js" />
+    <Content Include="vendors\jquery\src\var\document.js" />
+    <Content Include="vendors\jquery\src\var\documentElement.js" />
+    <Content Include="vendors\jquery\src\var\hasOwn.js" />
+    <Content Include="vendors\jquery\src\var\indexOf.js" />
+    <Content Include="vendors\jquery\src\var\pnum.js" />
+    <Content Include="vendors\jquery\src\var\push.js" />
+    <Content Include="vendors\jquery\src\var\rcssNum.js" />
+    <Content Include="vendors\jquery\src\var\rnotwhite.js" />
+    <Content Include="vendors\jquery\src\var\slice.js" />
+    <Content Include="vendors\jquery\src\var\support.js" />
+    <Content Include="vendors\jquery\src\var\toString.js" />
+    <Content Include="vendors\jquery\src\wrap.js" />
+    <Content Include="vendors\jszip\dist\jszip.js" />
+    <Content Include="vendors\jszip\dist\jszip.min.js" />
+    <Content Include="vendors\jszip\docs\APPNOTE.TXT" />
+    <Content Include="vendors\jszip\docs\references.txt" />
+    <Content Include="vendors\jszip\docs\ZIP spec.txt" />
+    <Content Include="vendors\jszip\documentation\css\main.css" />
+    <Content Include="vendors\jszip\documentation\css\pygments.css" />
+    <Content Include="vendors\jszip\documentation\examples\download-zip-file.html" />
+    <Content Include="vendors\jszip\documentation\examples\downloader.html" />
+    <Content Include="vendors\jszip\documentation\examples\downloader.js" />
+    <Content Include="vendors\jszip\documentation\examples\get-binary-files-ajax.html" />
+    <Content Include="vendors\jszip\documentation\examples\read-local-file-api.html" />
+    <Content Include="vendors\jszip\documentation\_layouts\default.html" />
+    <Content Include="vendors\jszip\Gruntfile.js" />
+    <Content Include="vendors\jszip\index.html" />
+    <Content Include="vendors\jszip\lib\arrayReader.js" />
+    <Content Include="vendors\jszip\lib\base64.js" />
+    <Content Include="vendors\jszip\lib\compressedObject.js" />
+    <Content Include="vendors\jszip\lib\compressions.js" />
+    <Content Include="vendors\jszip\lib\crc32.js" />
+    <Content Include="vendors\jszip\lib\dataReader.js" />
+    <Content Include="vendors\jszip\lib\defaults.js" />
+    <Content Include="vendors\jszip\lib\deprecatedPublicUtils.js" />
+    <Content Include="vendors\jszip\lib\flate.js" />
+    <Content Include="vendors\jszip\lib\index.js" />
+    <Content Include="vendors\jszip\lib\license_header.js" />
+    <Content Include="vendors\jszip\lib\load.js" />
+    <Content Include="vendors\jszip\lib\nodeBuffer.js" />
+    <Content Include="vendors\jszip\lib\nodeBufferReader.js" />
+    <Content Include="vendors\jszip\lib\object.js" />
+    <Content Include="vendors\jszip\lib\signature.js" />
+    <Content Include="vendors\jszip\lib\stringReader.js" />
+    <Content Include="vendors\jszip\lib\stringWriter.js" />
+    <Content Include="vendors\jszip\lib\support.js" />
+    <Content Include="vendors\jszip\lib\uint8ArrayReader.js" />
+    <Content Include="vendors\jszip\lib\uint8ArrayWriter.js" />
+    <Content Include="vendors\jszip\lib\utf8.js" />
+    <Content Include="vendors\jszip\lib\utils.js" />
+    <Content Include="vendors\jszip\lib\zipEntries.js" />
+    <Content Include="vendors\jszip\lib\zipEntry.js" />
+    <Content Include="vendors\jszip\vendor\FileSaver.js" />
+    <Content Include="vendors\nprogress\index.html" />
+    <Content Include="vendors\nprogress\nprogress.css" />
+    <Content Include="vendors\nprogress\nprogress.js" />
+    <Content Include="vendors\nprogress\support\extras.css" />
+    <Content Include="vendors\nprogress\support\style.css" />
+    <Content Include="vendors\webkit\vertscroll.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\" />
+    <Folder Include="vendors\bootstrap\nprogress\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2639</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2639/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
