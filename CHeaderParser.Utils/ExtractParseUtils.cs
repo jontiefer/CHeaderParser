@@ -100,10 +100,10 @@ namespace CHeaderParser.Utils
         /// such as sizeof operators, mathematical equations, bit-shifting and hexadecimal values can be converted into decimal (base-10)
         /// numeric  values.
         /// </summary>
-        /// <param name="dsHeaderData"></param>
+        /// <param name="HeaderAccess"></param>
         /// <param name="strArray"></param>
         /// <returns></returns>
-        public static string ConvertNonNumericElements(CHeaderDataSet dsHeaderData, string strArray)
+        public static string ConvertNonNumericElements(DataAccess HeaderAccess, string strArray)
         {
             try
             {
@@ -127,7 +127,7 @@ namespace CHeaderParser.Utils
                         //Calculates the data sizes of all data types wrapped in a sizeof operator in the expression contained in the array element.
                         //Each sizeof value in the expression will be calculated into its associated numeric value.
                         if(strElement.Contains("sizeof"))                        
-                            strElement = ConvertSizeOfToNumeric(dsHeaderData, strElement);
+                            strElement = ConvertSizeOfToNumeric(HeaderAccess, strElement);
 
                         //Calculates the mathematical expression contained in the array and returns the numerical value as a result of the 
                         //expression.  This will also convert and calculate hex values.
@@ -168,10 +168,10 @@ namespace CHeaderParser.Utils
         /// type definitions, enumeations and structures can be evaluated, so it will be neccessary to pass in the HeaderData data set 
         /// to use to check for the appropriate extracted data types, such as type definitions and structures that were defined in the header.
         /// </summary>
-        /// <param name="dsHeader"></param>
+        /// <param name="HeaderAccess"></param>
         /// <param name="strDataTypeName"></param>
         /// <returns></returns>
-        public static int SizeOfDataType(CHeaderDataSet dsHeaderData, string strDataTypeName)
+        public static int SizeOfDataType(DataAccess HeaderAccess, string strDataTypeName)
         {
             try
             {
@@ -179,14 +179,14 @@ namespace CHeaderParser.Utils
 
                 if (DataAccess.PrimDataTypes.IsPrimitiveDataType(strDataTypeName))
                     iDataSizeBytes = DataAccess.PrimDataTypes[strDataTypeName];
-                else if (dsHeaderData.tblTypeDefs.FindByTypeDefName(strDataTypeName) != null)
+                else if (HeaderAccess.TypeDefExists(strDataTypeName))
                 {
-                    CHeaderDataSet.tblTypeDefsRow rowTypeDef = dsHeaderData.tblTypeDefs.FindByTypeDefName(strDataTypeName);
+                    CHeaderDataSet.tblTypeDefsRow rowTypeDef = HeaderAccess.GetTypeDef(strDataTypeName);
                     iDataSizeBytes = rowTypeDef.DataSize;
                 }
-                else if (dsHeaderData.tblStructures.FindByStructName(strDataTypeName) != null)
+                else if (HeaderAccess.StructExists(strDataTypeName))
                 {
-                    CHeaderDataSet.tblStructuresRow rowStruct = dsHeaderData.tblStructures.FindByStructName(strDataTypeName);
+                    CHeaderDataSet.tblStructuresRow rowStruct = HeaderAccess.GetStruct(strDataTypeName);
                     iDataSizeBytes = rowStruct.DataSize;
                 }//end if
 
@@ -205,9 +205,9 @@ namespace CHeaderParser.Utils
         /// operator will be evaluated for the specified data type.  Once the value is evaluted, the sizeof statement is removed and replaced 
         /// with the numeric value in the same location.  
         /// </summary>
-        /// <param name="dsHeaderData"></param>
+        /// <param name="HeaderAccess"></param>
         /// <param name="strExpression"></param>
-        public static string ConvertSizeOfToNumeric(CHeaderDataSet dsHeaderData, string strExpression)
+        public static string ConvertSizeOfToNumeric(DataAccess HeaderAccess, string strExpression)
         {
             try
             {
@@ -234,7 +234,7 @@ namespace CHeaderParser.Utils
                     else
                         strDataTypeName = strDataTypeName.Trim();
 
-                    int iDataSize = SizeOfDataType(dsHeaderData, strDataTypeName);
+                    int iDataSize = SizeOfDataType(HeaderAccess, strDataTypeName);
 
                     strExpression = strExpression.Remove(iSizeOfStartIndex, iSizeOfEndIndex - iSizeOfStartIndex + 1);
                     strExpression = strExpression.Insert(iSizeOfStartIndex, iDataSize.ToString());
