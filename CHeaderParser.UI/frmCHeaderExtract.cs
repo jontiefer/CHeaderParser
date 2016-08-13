@@ -107,8 +107,8 @@ namespace CHeaderParser
                 m_HeaderAccess = new Data.DataAccess();
                 m_dsHeaderData = m_HeaderAccess.HeaderDataSet;
 
-                m_typeExt = new Extractor.TypeExtractor(m_dsHeaderData);
-                m_structExt = new Extractor.StructExtractor(m_dsHeaderData);
+                m_typeExt = new Extractor.TypeExtractor(m_HeaderAccess);
+                m_structExt = new Extractor.StructExtractor(m_HeaderAccess);
             }
             catch (Exception err)
             {
@@ -742,7 +742,7 @@ namespace CHeaderParser
                 else if (rbQryDataSize.Checked)
                     aryStructRows = QueryStructsBySize();
 
-                DataExport export = new DataExport(m_dsHeaderData);
+                DataExport export = new DataExport(m_HeaderAccess);
 
                 bool blRtnVal = false;
 
