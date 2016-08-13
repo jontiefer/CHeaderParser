@@ -45,7 +45,13 @@ namespace CHeaderParser.Extractor
 
         #region Member Data Object Variables
 
-        private CHeaderDataSet m_dsHeaderData = null;
+        /// <summary>
+        /// Reference to Data Access layer object that will used to perform all data agnostic CRUD operations with the data backend.
+        /// </summary>
+        private DataAccess m_HeaderAccess = null;
+
+        //NOTE: Only data access objects will be linked to other classes in the CHeaderParser library, instead of direct links to data objects.
+        //private CHeaderDataSet m_dsHeaderData = null;
 
         #endregion
 
@@ -54,11 +60,12 @@ namespace CHeaderParser.Extractor
         /// <summary>
         /// Constructor
         /// </summary>
-        public TypeExtractor(CHeaderDataSet dsHeaderData)
+        /// <param name="HeaderAccess"></param>
+        public TypeExtractor(DataAccess HeaderAccess)
         {
             try
-            {                
-                m_dsHeaderData = dsHeaderData;                
+            {
+                m_HeaderAccess = HeaderAccess;
             }
             catch (Exception err)
             {
@@ -96,9 +103,7 @@ namespace CHeaderParser.Extractor
         public TypeDefData ExtractTypeDefData(string strTypeDef)
         {
             try
-            {
-                CHeaderDataSet.tblTypeDefsDataTable dtTypeDefs = m_dsHeaderData.tblTypeDefs;
-
+            {                
                 TypeDefData tdTypeDef = new TypeDefData();
                 
                 //Checks to see if the type definition is defined as an array and verifies that the array contains only numeric values.  If 
@@ -109,7 +114,7 @@ namespace CHeaderParser.Extractor
                     if (strTypeDef.Contains('[') && strTypeDef.Contains(']'))
                     {
                         if (!ExtractorUtils.IsNumericArray(strTypeDef))
-                            strTypeDef = ExtractorUtils.ConvertNonNumericElements(m_dsHeaderData, strTypeDef);
+                            strTypeDef = ExtractorUtils.ConvertNonNumericElements(m_HeaderAccess, strTypeDef);
                     }//end if                    
 
                     string strAnalyze = strTypeDef.Trim();
@@ -191,7 +196,7 @@ namespace CHeaderParser.Extractor
                             //If the data type of the type definition is associated with another type definition, then the type definition will be located and the 
                             //data size of the type definition which is the associated data type of the type definition will be assigned to the type definition being
                             //extracted.
-                            CHeaderDataSet.tblTypeDefsRow rowTypeDef = dtTypeDefs.FindByTypeDefName(strTypeDefDataType);
+                            CHeaderDataSet.tblTypeDefsRow rowTypeDef = m_HeaderAccess.GetTypeDef(strTypeDefDataType);
 
                             if (rowTypeDef == null)
                                 return null;

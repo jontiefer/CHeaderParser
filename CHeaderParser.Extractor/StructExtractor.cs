@@ -48,7 +48,13 @@ namespace CHeaderParser.Extractor
 
         #region Member Data Object Variables
 
-        private CHeaderDataSet m_dsHeaderData = null;
+        /// <summary>
+        /// Reference to Data Access layer object that will used to perform all data agnostic CRUD operations with the data backend.
+        /// </summary>
+        private DataAccess m_HeaderAccess = null;
+
+        //NOTE: Only data access objects will be linked to other classes in the CHeaderParser library, instead of direct links to data objects.
+        //private CHeaderDataSet m_dsHeaderData = null;
 
         #endregion
 
@@ -57,11 +63,12 @@ namespace CHeaderParser.Extractor
         /// <summary>
         /// Constructor
         /// </summary>
-        public StructExtractor(CHeaderDataSet dsHeaderData)
+        /// <param name="HeaderAccess"></param>
+        public StructExtractor(DataAccess HeaderAccess)
         {
             try
             {
-                m_dsHeaderData = dsHeaderData;
+                m_HeaderAccess = HeaderAccess;
             }
             catch (Exception err)
             {
@@ -110,7 +117,7 @@ namespace CHeaderParser.Extractor
                 if (strStruct.Contains('[') && strStruct.Contains(']'))
                 {
                     if (!ExtractorUtils.IsNumericArray(strStruct))
-                        strStruct = ExtractorUtils.ConvertNonNumericElements(m_dsHeaderData, strStruct);
+                        strStruct = ExtractorUtils.ConvertNonNumericElements(m_HeaderAccess, strStruct);
                 }//end if        
                 
                 int iStartBracketIndex = strStruct.IndexOf('{', 0);
@@ -404,39 +411,8 @@ namespace CHeaderParser.Extractor
 
                         if (!blIsPointer && !blIsStruct && !blIsEnum)
                             fdFieldSchema.FieldType = GetVarFieldType(fdFieldSchema.FieldTypeName);
-
-
-                        /* OBSOLETE: Does not take into account fields declared with commas and spanning multiple lines, before semi colon termination.
-                        int iFieldCount = aryFieldSections.Length - iFieldNameStartIndex;
-                        string[] aryFieldNames = new string[iFieldCount];
-                        aryFields = new FieldData[iFieldCount];
-
-                        int iFieldNameCounter = 0;
-
-                        for (int i = iFieldNameStartIndex; i < aryFieldSections.Length; i++)
-                        {
-                            aryFieldNames[iFieldNameCounter] = aryFieldSections[i];
-                            iFieldNameCounter++;
-                        }//next i                       
-                        */
-
-                        /*OBSOLETE: Missed fields that were comma separated
-                        int iFieldCount = 0;                        
-                        List<string> lstFieldNames = new List<string>();
-
-                        if (!aryFieldSections[iFieldNameStartIndex].Contains(','))
-                            lstFieldNames.Add(aryFieldSections[iFieldNameStartIndex].Trim().Replace(";", ""));
-                        else
-                        {
-                            for (int i = iFieldNameStartIndex; i < aryFieldSections.Length; i++)
-                            {
-                                lstFieldNames.AddRange(aryFieldSections[i]
-                                                                              .Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
-                                                                              .Select(f => f.Trim().Replace(";", "")));
-                            }//next i
-                        }//end if
-                        */
-
+                        
+                                                
                         //If fields in the structure are declared with bit values, then a check will be made to determine if any of the bit fields 
                         //in the bit field set are declared without field names.  Bit fields declared without field names indicate either unused 
                         //bits in the field or the repositioning to a new byte in the bit declared field set.  If an empty bit field name is declared 
@@ -749,15 +725,12 @@ namespace CHeaderParser.Extractor
         private FieldTypeEnum GetVarFieldType(string strFieldTypeName)
         {
             try
-            {
-                CHeaderDataSet.tblTypeDefsDataTable dtTypeDefs = m_dsHeaderData.tblTypeDefs;                
-                CHeaderDataSet.tblStructuresDataTable dtStructs = m_dsHeaderData.tblStructures;
-
+            {                
                 if (DataAccess.PrimDataTypes.IsPrimitiveDataType(strFieldTypeName))
                     return FieldTypeEnum.Primitive;
-                else if (dtTypeDefs.FindByTypeDefName(strFieldTypeName) != null)
+                else if (m_HeaderAccess.TypeDefExists(strFieldTypeName))
                     return FieldTypeEnum.TypeDef;
-                else if (dtStructs.FindByStructName(strFieldTypeName) != null)
+                else if (m_HeaderAccess.StructExists(strFieldTypeName))
                     return FieldTypeEnum.Structure;
                 else if (strFieldTypeName.Contains("*"))
                     return FieldTypeEnum.Pointer;
@@ -780,15 +753,12 @@ namespace CHeaderParser.Extractor
         {
             try
             {
-                CHeaderDataSet.tblTypeDefsDataTable dtTypeDefs = m_dsHeaderData.tblTypeDefs;                
-                CHeaderDataSet.tblStructuresDataTable dtStructs = m_dsHeaderData.tblStructures;
-
                 if (DataAccess.PrimDataTypes.IsPrimitiveDataType(strFieldTypeName))
                     return DataAccess.PrimDataTypes[strFieldTypeName];
-                else if (dtTypeDefs.FindByTypeDefName(strFieldTypeName) != null)
-                    return dtTypeDefs.FindByTypeDefName(strFieldTypeName).DataSize;
-                else if (dtStructs.FindByStructName(strFieldTypeName) != null)
-                    return dtStructs.FindByStructName(strFieldTypeName).DataSize;
+                else if (m_HeaderAccess.TypeDefExists(strFieldTypeName))
+                    return m_HeaderAccess.GetTypeDef(strFieldTypeName).DataSize;
+                else if (m_HeaderAccess.StructExists(strFieldTypeName))
+                    return m_HeaderAccess.GetStruct(strFieldTypeName).DataSize;
                 else if (strFieldTypeName.Contains("*"))
                     return PointerSizeBytes;
                 else
