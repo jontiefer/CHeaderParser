@@ -826,91 +826,7 @@ namespace CHeaderParser.Parser
 
         #endregion
 
-        #region Function Parsing Functions
-
-        /* NOT USED: Invalid logic.. Function declarations will be checked for existence instead.
-        /// <summary>
-        /// The GetFuncDeclareEndIndex function will locate the opening and closing parentheses at the position in the header data string 
-        /// file specified in the function's parameters.  This function will traverse through the multi-layers of nested parentheses in the function 
-        /// declaration and identify the ending parentheses position of where the function declaration ends is located in the declaration block.
-        /// An integer will be returned that will contain the index of the ending semi-colon of the function declaration.  If is determined that 
-        /// the current data being parsed is not a function declaration or if an error occurs, a value of -1 will be returned instead.
-        /// </summary>
-        /// <param name="strBlock">The top-level block of code to search.</param>        
-        /// <param name="iCurPos">The current position in the block of code to start parsing to locate the top-level code block.  This position 
-        /// must be before or starting at the position of the top-level code block.</param>
-        /// <returns></returns>
-        public int GetFuncDeclareEndIndex(int iCurPos = -1)
-        {
-            try
-            {
-                if (iCurPos == -1)
-                    iCurPos = CurrentPos;
-                                
-                int iStartIndex = m_strHeaderData.IndexOf('(', iCurPos);
-                int iEndIndex = m_strHeaderData.IndexOf(");", iCurPos);
-
-                int iStartOpenPos = iStartIndex;
-
-                int iOpenParenthCount = 0;
-                int iCloseParenthCount = 0;
-                bool blEndParenthFound = false;
-
-                int iCheckIndex = 0;
-
-                if (iStartIndex == -1 || iEndIndex == -1)
-                    return -1;
-
-                if (iEndIndex < iStartIndex)
-                    return -1;
-
-                //If a bracket is detected before a parentheses, then the block of code being parsed is not a function declaration.
-                iCheckIndex = m_strHeaderData.IndexOf('{', iCurPos);
-                if (iCheckIndex < iStartIndex)
-                    return -1;
-
-                //If a bracket is detected between the first detected opening and closed parentheses, the code being parsed is not a function 
-                //declaration.
-                iCheckIndex = m_strHeaderData.IndexOf('{', iStartIndex);
-                if (iCheckIndex < iEndIndex)
-                    return -1;
-
-                iEndIndex = -1;
-
-                while (!blEndParenthFound && !EndOfFile)
-                {
-                    int iNextEndParenthIndex =  m_strHeaderData.IndexOf(')', iCurPos);
-                    string strChunk = m_strHeaderData.Substring(iStartOpenPos, iNextEndParenthIndex - iStartOpenPos + 1);
-
-                    iOpenParenthCount = strChunk.Count(c => c == '(');
-                    iCloseParenthCount = strChunk.Count(c => c == ')');
-
-                    if (iOpenParenthCount == iCloseParenthCount)
-                    {
-                        blEndParenthFound = true;
-
-                        if (m_strHeaderData.Substring(iNextEndParenthIndex, 2) != ");")
-                            //If the function declaration does not end with a closing parentheses terminated by a semi-colon, then it can be determined 
-                            //that the data parsed was not a function declaration.
-                            iEndIndex = -1;
-                        else
-                            iEndIndex = iNextEndParenthIndex + 1;
-                    }
-                    else
-                    {
-                        iCurPos = iNextEndParenthIndex + 1;
-                    }//end if
-                }//end while
-
-                return iEndIndex;
-            }
-            catch (Exception err)
-            {
-                ErrorHandler.ShowErrorMessage(err, "Error in GetFuncDeclareEndIndex function of HeaderDeclareParser class.");
-                return -1;
-            }
-        }
-        */
+        #region Function Parsing Functions        
 
         #endregion
 
@@ -948,28 +864,7 @@ namespace CHeaderParser.Parser
                 return "";
             }
         }
-
-        /* NOT USED: GetTYpeDef function can handle parsing typedef arrays.
-        /// <summary>
-        /// Parses the type definition array declaration from the header data string and returns a string that contains the 
-        /// full declaration of the type definition array declaration for the current line in the header file.  The cursor will be 
-        /// advanced to the end of the declaration after the appropriate data is parsed.
-        /// NOTE: Typedef structure arrays will not be included in typedef declarations, but typedef enum arrays will be.  All
-        /// structures will use the GetStruct parsing function instead.
-        /// </summary>
-        /// <returns></returns>
-        public string GetTypeDefArray()
-        {
-            try
-            {
-            }
-            catch (Exception err)
-            {
-                ErrorHandler.ShowErrorMessage(err, "Error in GetTypeDefArray function of HeaderDeclareParser class.");
-            }
-        }
-        */
-
+        
         /// <summary>
         /// Parses the enumeration declaration from the header data string and returns a string that contains the 
         /// full declaration of the enumeration declaration for the current line in the header file.  The cursor will be 
@@ -1042,90 +937,7 @@ namespace CHeaderParser.Parser
                 return "";
             }
         }
-
-        /* NOT USED: Non-Optimal logic, with better implementation used instead.
-        /// <summary>
-        /// Parses the structure or union declaration from the header data string and returns a string that contains the full
-        /// declaration of the structure or union declaration for the current line in the header file.  The end of the structure 
-        /// or union will be detected by traversing through the nested structures/unions within the structure/union in the header string.  
-        /// The cursor will be advanced to the position after the end of the declaration once the appropriate data is parsed.
-        /// NOTE: If nested structures and unions are to be parsed as top-level structures, then the nested structure/union declaration, itself, 
-        /// should be linked directly to the HeaderDeclareParser class as the header data string.
-        /// NOTE: Typedef structures will also be parsed in the GetStructure function.
-        /// </summary>
-        /// <param name="blMoveNextItemAfterParse"></param>
-        /// <returns></returns>
-        public string GetStructure(bool blMoveNextItemAfterParse = true)
-        {
-            try
-            {
-                int iStartIndex = CurrentPos;
-                int iEndIndex = -1;
-                
-                string strStruct = "";
-                bool blStructEndDetected = false;
-
-                int iNextStructChildIndex = -1;
-                int iNextUnionChildIndex = -1;
-
-                int iNextChildIndex = -1;
-                int iNextCloseIndex = -1;
-
-                int iNestedStructCount = 0;
-
-                int iStructCurPos = iStartIndex;
-
-                while (!blStructEndDetected)
-                {
-                    iNextStructChildIndex = m_strHeaderData.IndexOf("struct", iStructCurPos);
-                    iNextUnionChildIndex = m_strHeaderData.IndexOf("union", iStructCurPos);
-
-                    if (iNextStructChildIndex < iNextUnionChildIndex && iNextStructChildIndex != -1)
-                    {
-                        iNextChildIndex = iNextStructChildIndex;
-                        iStructCurPos += iNextChildIndex + "struct".Length;
-                    }
-                    else if (iNextUnionChildIndex != -1)
-                    {
-                        iNextChildIndex = iNextUnionChildIndex;
-                        iStructCurPos += iNextChildIndex + "union".Length;
-                    }
-                    else
-                        iNextChildIndex = -1;
-
-                    if (iNextChildIndex == -1)
-                        blStructEndDetected = true;
-                    else
-                    {
-                        iNestedStructCount++;                        
-                    }//end if
-                }//end while
-
-                iNextCloseIndex = iStartIndex;
-                for (int i = 0; i < iNestedStructCount + 1; i++)
-                {
-                    iNextCloseIndex = m_strHeaderData.IndexOf("}", iNextCloseIndex);
-                }//next i
-
-                iEndIndex = m_strHeaderData.IndexOf(';', iNextCloseIndex);
-
-                strStruct = m_strHeaderData.Substring(iStartIndex, iEndIndex - iStartIndex);
-
-                if (blMoveNextItemAfterParse)
-                    MoveNextItem();
-                else
-                    CurrentPos = iEndIndex + 1;
-
-                return strStruct;
-            }
-            catch (Exception err)
-            {
-                ErrorHandler.ShowErrorMessage(err, "Error in GetStructure function of HeaderDeclareParser class.");
-                return "";
-            }
-        }
-        */
-
+        
         #endregion
 
         #region Declaration Identification Functions
@@ -1193,38 +1005,7 @@ namespace CHeaderParser.Parser
                 return false;
             }
         }
-
-        /* NOT USED: TypeDefArrays will now be joined into the identified as type definitions.
-        /// <summary>
-        /// Indicates if the next character in the parsed header is the beginning of a type definition array declaration.
-        /// </summary>
-        private bool IsTypeDefArray()
-        {
-            try
-            {
-                if (!IsTypeDef())
-                    return false;
-
-                int iTypeDefEndPos = m_strHeaderData.IndexOf(';', CurrentPos);
-
-                if (iTypeDefEndPos == -1)
-                    return false;
-
-                string strPeekData = m_strHeaderData.Substring(CurrentPos, iTypeDefEndPos - CurrentPos);
-
-                if (strPeekData.Contains(']'))
-                    return true;
-                else
-                    return false;
-            }
-            catch (Exception err)
-            {
-                ErrorHandler.ShowErrorMessage(err, "Error in IsTypeDef function of HeaderDeclareParser class.");
-                return false;
-            }
-        }
-        */
-
+        
         /// <summary>
         /// Indicates if the next character in the parsed header is the beginning of an enumeration.
         /// </summary>
