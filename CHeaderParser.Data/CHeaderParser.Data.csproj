@@ -69,8 +69,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="COPYING.txt" />
-    <Content Include="COPYING.LESSER.txt" />
+    <None Include="COPYING" />
+    <None Include="COPYING.LESSER" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CHeaderParser.Global\CHeaderParser.Global.csproj">

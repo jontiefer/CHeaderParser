@@ -54,16 +54,25 @@ namespace CHeaderParser.Data
 
         #region Member Data Object Variables
 
+        //NOTE: Only data access objects will be linked to other classes in the CHeaderParser library, instead of direct links to data objects.
+        /*
         /// <summary>
         /// A reference to the HeaderDataSet data object that contains all extracted structure and associated typedef and field information.
         /// The DataExport class will require a linked HeaderDataSet data object to perform its export operations and will use the dataset 
         /// as the source of information containing all information that will be used to export structures and their associated field information.
         /// </summary>
         private CHeaderDataSet m_dsHeaderData = null;
+        */
 
         /// <summary>
-        /// A reference to the Header Data Access object that will interface with the HeaderDataSet and allow for special operations and 
-        /// queries to be performed upon the linked header data.
+        /// A reference to the HeaderDataSet data access object that will provide a wrapper around the backend data source and will be used to 
+        /// perform all CRUD operations.  The data source will contain all extracted structure and associated typedef and field information 
+        /// and be accessed bia the data access layer object.
+        /// 
+        /// The DataExport class will require a linked data access object to perform its export operations and will use the data source
+        /// linked to the data access object as the source of information containing all information that will be used to export structures 
+        /// and their associated field information.  The Header Access object will allow for special operations and queries to be performed
+        /// upon the linked header data.
         /// </summary>
         private DataAccess m_HeaderAccess = null;
 
@@ -74,15 +83,15 @@ namespace CHeaderParser.Data
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="dsHeaderData">A reference to the HeaderDataSet data object that contains all extracted structure and associated typedef and field information.
-        /// The DataExport class will require a linked HeaderDataSet data object to perform its export operations and will use the dataset 
-        /// as the source of information containing all information that will be used to export structures and their associated field information.</param>
-        public DataExport(CHeaderDataSet dsHeaderData = null)
+        /// <param name="HeaderAccess">A reference to the HeaderDataSet data access object that will provide a wrapper around the backend data source and will be used to 
+        /// perform all CRUD operations.  The data source will contain all extracted structure and associated typedef and field information 
+        /// and be accessed bia the data access layer object.</param>
+        public DataExport(DataAccess HeaderAccess = null)
         {
             try
             {
-                if (dsHeaderData != null)
-                    LinkHeaderData(dsHeaderData);
+                if (HeaderAccess != null)
+                    LinkHeaderData(HeaderAccess);
             }
             catch (Exception err)
             {
@@ -96,16 +105,16 @@ namespace CHeaderParser.Data
 
         /// <summary>
         /// Links the HeaderDataSet data object that contains all extracted structure and associated typedef and field information.
-        /// The DataExport class will require a linked HeaderDataSet data object to perform its export operations and will use the dataset 
-        /// as the source of information containing all information that will be used to export structures and their associated field information.
+        /// The DataExport class will require a linked HeaderDataSet data object to perform its export operations and will use the linked 
+        /// data source as the source of information containing all information that will be used to export structures and their associated
+        /// field information.
         /// </summary>
-        /// <param name="dsHeaderData"></param>
-        public void LinkHeaderData(CHeaderDataSet dsHeaderData)
+        /// <param name="HeaderAccess"></param>
+        public void LinkHeaderData(DataAccess HeaderAccess)
         {
             try
             {
-                m_dsHeaderData = dsHeaderData;
-                m_HeaderAccess = new Data.DataAccess(m_dsHeaderData);
+                m_HeaderAccess = HeaderAccess;                
             }
             catch (Exception err)
             {

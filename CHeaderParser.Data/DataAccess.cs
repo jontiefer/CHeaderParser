@@ -263,7 +263,76 @@ namespace CHeaderParser.Data
 
         #endregion
 
-        #region Data Table Record Loading Functions
+        #region TypeDef Record Loading Functions
+
+        /// <summary>
+        /// Checks to see if the TypeDef with the name specified in the function parameters exists in the TypeDefs table contained within 
+        /// the HeaderData dataset object linked to the DataAccess class.
+        /// </summary>
+        /// <param name="strTypeDefName"></param>
+        /// <returns></returns>
+        public bool TypeDefExists(string strTypeDefName)
+        {
+            try
+            {
+                if (m_dsHeaderData.tblTypeDefs.FindByTypeDefName(strTypeDefName) != null)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception err)
+            {
+                ErrorHandler.ShowErrorMessage(err, "Error in TypeDefExists function of DataAccess class.");
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Retrieves the row in the TypeDefs data table in the Header Data Set object linked to the DataAccess class with the name specified
+        /// in the function's TypeDefName parameter.
+        /// </summary>
+        /// <param name="strTypeDefName"></param>
+        /// <returns></returns>
+        public CHeaderDataSet.tblTypeDefsRow GetTypeDef(string strTypeDefName)
+        {
+            try
+            {
+                CHeaderDataSet.tblTypeDefsRow rowTypeDef = TypeDefsTable.FindByTypeDefName(strTypeDefName);
+
+                return rowTypeDef;
+            }
+            catch (Exception err)
+            {
+                ErrorHandler.ShowErrorMessage(err, "Error in GetTypeDef function of DataAccess class.");
+                return null;
+            }
+        }
+
+        #endregion
+
+        #region Structure Record Loading Functions
+
+        /// <summary>
+        /// Checks to see if the structure with the name specified in the function parameters exists in the Structures table contained within 
+        /// the HeaderData dataset object linked to the DataAccess class.
+        /// </summary>
+        /// <param name="strStructName"></param>
+        /// <returns></returns>
+        public bool StructExists(string strStructName)
+        {
+            try
+            {
+                if (m_dsHeaderData.tblStructures.FindByStructName(strStructName) != null)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception err)
+            {
+                ErrorHandler.ShowErrorMessage(err, "Error in StructExists function of DataAccess class.");
+                return false;
+            }
+        }
 
         /// <summary>
         /// Retrieves the row in the Structures data table in the Header Data Set object linked to the DataAccess class with the name specified
@@ -285,6 +354,10 @@ namespace CHeaderParser.Data
                 return null;
             }
         }
+
+        #endregion
+
+        #region Field Record Loading Functions
 
         /// <summary>
         /// Retrieves a set of FieldData rows in the Fields data table in the Header Data Set object linked to the DataAccess class that are contained 
@@ -314,27 +387,6 @@ namespace CHeaderParser.Data
             catch (Exception err)
             {
                 ErrorHandler.ShowErrorMessage(err, "Error in GetStructFields function of DataAccess class.");
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Retrieves the row in the TypeDefs data table in the Header Data Set object linked to the DataAccess class with the name specified
-        /// in the function's TypeDefName parameter.
-        /// </summary>
-        /// <param name="TypeDefName"></param>
-        /// <returns></returns>
-        public CHeaderDataSet.tblTypeDefsRow GetTypeDef(string TypeDefName)
-        {
-            try
-            {
-                CHeaderDataSet.tblTypeDefsRow rowTypeDef = TypeDefsTable.FindByTypeDefName(TypeDefName);
-
-                return rowTypeDef;
-            }
-            catch (Exception err)
-            {
-                ErrorHandler.ShowErrorMessage(err, "Error in GetTypeDef function of DataAccess class.");
                 return null;
             }
         }
