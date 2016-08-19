@@ -35,7 +35,7 @@ namespace CHeaderParser.Utils
 {
     public static class ExtractorUtils
     {
-        #region Array Element Information and Manipulation Properties, Functions
+        #region Array Element Information and Manipulation Properties, Functions        
 
         /// <summary>
         /// Checks to see if the array contained in the declaration passed to the function is composed completely of numeric values.  In the 
@@ -47,8 +47,13 @@ namespace CHeaderParser.Utils
         public static bool IsNumericArray(string strArray)
         {
             try
-            {                
-                strArray = strArray.Replace(" ", "");
+            {
+                //NOTE: If an array contains a numeric value, but has a space, it will possibly result in the array not being properly 
+                //calculated and an array field in a structure/union will be improperly split when detecting field names and declarations
+                //in structures.  Therefore, it will be neccessary to detect if any spaces are present in the array declarations and treat 
+                //them as they are non-numeric values, so the array can be formatted into the proper numeric format without spaces in the 
+                //ConvertNonNumericElements function.
+                //strArray = strArray.Replace(" ", "");
 
                 int iStartIndex = strArray.IndexOf('[');
                 int iEndIndex = strArray.LastIndexOf(']');
@@ -120,10 +125,12 @@ namespace CHeaderParser.Utils
                     iNextCloseBracketIndex = strArray.IndexOf(']', iNextOpenBracketIndex);
                     iCurPos = iNextOpenBracketIndex + 1;
 
-                    strElement = strArray.Substring(iCurPos, iNextCloseBracketIndex - iCurPos).Trim();
+                    strElement = strArray.Substring(iCurPos, iNextCloseBracketIndex - iCurPos);
 
                     if (!General.IsNumeric(strElement))
-                    {                        
+                    {
+                        strElement = strElement.Trim();
+                              
                         //Calculates the data sizes of all data types wrapped in a sizeof operator in the expression contained in the array element.
                         //Each sizeof value in the expression will be calculated into its associated numeric value.
                         if(strElement.Contains("sizeof"))                        
