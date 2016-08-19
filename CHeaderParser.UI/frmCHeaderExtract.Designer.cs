@@ -1,4 +1,6 @@
-﻿namespace CHeaderParser
+﻿using DotCoolControls;
+
+namespace CHeaderParser
 {
     partial class frmCHeaderExtract
     {
@@ -29,36 +31,32 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCHeaderExtract));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbStructs = new System.Windows.Forms.ListBox();
-            this.gridFields = new System.Windows.Forms.DataGridView();
-            this.fieldByteOffsetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fieldTypeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fieldNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fieldIndexDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataSizeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.elementsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fieldKeyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dsHeaderDataView = new CHeaderParser.Data.CHeaderDataSet();
             this.pnlStructUnion = new System.Windows.Forms.GroupBox();
             this.rbSUBoth = new System.Windows.Forms.RadioButton();
             this.rbSUUnion = new System.Windows.Forms.RadioButton();
             this.rbSUStruct = new System.Windows.Forms.RadioButton();
             this.MainTab = new System.Windows.Forms.TabControl();
             this.tabFileLoad = new System.Windows.Forms.TabPage();
-            this.btnClearFileNames = new System.Windows.Forms.Button();
-            this.btnParse = new System.Windows.Forms.Button();
-            this.btnLoadHeaderFiles = new System.Windows.Forms.Button();
-            this.btnHeaderFileSearch = new System.Windows.Forms.Button();
+            this.btnClearFileNames = new DotCoolControls.DotCoolButton();
+            this.btnParse = new DotCoolControls.DotCoolButton();
+            this.btnHeaderFileSearch = new DotCoolControls.DotCoolButton();
             this.txtHeaderFileNames = new System.Windows.Forms.TextBox();
             this.lblHeaderFileNamesInfoHdr = new System.Windows.Forms.Label();
             this.lblHeaderFileNamesHdr = new System.Windows.Forms.Label();
             this.tabDisplayExport = new System.Windows.Forms.TabPage();
-            this.btnExportServerFileNameSearch = new System.Windows.Forms.Button();
-            this.txtExportServerFileName = new System.Windows.Forms.TextBox();
-            this.lblExportServerFileNameHdr = new System.Windows.Forms.Label();
-            this.btnQuery = new System.Windows.Forms.Button();
-            this.btnExport = new System.Windows.Forms.Button();
+            this.btnQuery = new DotCoolControls.DotCoolButton();
             this.pnlQuerySettings = new System.Windows.Forms.GroupBox();
             this.pnlSortOrder = new System.Windows.Forms.GroupBox();
             this.rbSONone = new System.Windows.Forms.RadioButton();
@@ -84,9 +82,16 @@
             this.txtQryName = new System.Windows.Forms.TextBox();
             this.rbQryName = new System.Windows.Forms.RadioButton();
             this.rbQryDisplayAll = new System.Windows.Forms.RadioButton();
+            this.pnlDataExport = new System.Windows.Forms.GroupBox();
+            this.rbExportServerData = new System.Windows.Forms.RadioButton();
+            this.rbExportLocalData = new System.Windows.Forms.RadioButton();
+            this.pnlExportServerFile = new System.Windows.Forms.Panel();
+            this.txtExportServerFileName = new System.Windows.Forms.TextBox();
+            this.btnExportServerFileNameSearch = new DotCoolControls.DotCoolButton();
+            this.lblExportServerFileNameHdr = new System.Windows.Forms.Label();
+            this.btnExport = new DotCoolControls.DotCoolButton();
             this.tabSettings = new System.Windows.Forms.TabPage();
             this.pnlTesting = new System.Windows.Forms.GroupBox();
-            this.chbShowHdrLoadTime = new System.Windows.Forms.CheckBox();
             this.chbShowParseTime = new System.Windows.Forms.CheckBox();
             this.pnlDefaultSizeSettings = new System.Windows.Forms.GroupBox();
             this.lblEnumSizeHdr = new System.Windows.Forms.Label();
@@ -103,12 +108,16 @@
             this.lblStructName = new System.Windows.Forms.Label();
             this.lblStructNameHdr = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.pnlDataExport = new System.Windows.Forms.GroupBox();
-            this.rbExportServerData = new System.Windows.Forms.RadioButton();
-            this.rbExportLocalData = new System.Windows.Forms.RadioButton();
-            this.pnlExportServerFile = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.gridFields)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsHeaderDataView)).BeginInit();
+            this.gridFields = new DotCoolControls.DotCoolGridView();
+            this.fieldByteOffsetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fieldTypeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fieldNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fieldIndexDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataSizeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.elementsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fieldKeyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dsHeaderDataView = new CHeaderParser.Data.CHeaderDataSet();
             this.pnlStructUnion.SuspendLayout();
             this.MainTab.SuspendLayout();
             this.tabFileLoad.SuspendLayout();
@@ -119,6 +128,8 @@
             this.pnlQryRegex.SuspendLayout();
             this.pnlQryWildcard.SuspendLayout();
             this.pnlQryName.SuspendLayout();
+            this.pnlDataExport.SuspendLayout();
+            this.pnlExportServerFile.SuspendLayout();
             this.tabSettings.SuspendLayout();
             this.pnlTesting.SuspendLayout();
             this.pnlDefaultSizeSettings.SuspendLayout();
@@ -127,13 +138,15 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.pnlDataExport.SuspendLayout();
-            this.pnlExportServerFile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridFields)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsHeaderDataView)).BeginInit();
             this.SuspendLayout();
             // 
             // lbStructs
             // 
+            this.lbStructs.BackColor = System.Drawing.Color.Lavender;
             this.lbStructs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbStructs.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStructs.FormattingEnabled = true;
             this.lbStructs.ItemHeight = 16;
             this.lbStructs.Location = new System.Drawing.Point(0, 0);
@@ -141,89 +154,6 @@
             this.lbStructs.Size = new System.Drawing.Size(275, 464);
             this.lbStructs.TabIndex = 1;
             this.lbStructs.SelectedIndexChanged += new System.EventHandler(this.lbStructs_SelectedIndexChanged);
-            // 
-            // gridFields
-            // 
-            this.gridFields.AutoGenerateColumns = false;
-            this.gridFields.BackgroundColor = System.Drawing.Color.DimGray;
-            this.gridFields.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridFields.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.fieldByteOffsetDataGridViewTextBoxColumn,
-            this.fieldTypeNameDataGridViewTextBoxColumn,
-            this.fieldNameDataGridViewTextBoxColumn,
-            this.fieldIndexDataGridViewTextBoxColumn,
-            this.dataSizeDataGridViewTextBoxColumn,
-            this.dataTypeDataGridViewTextBoxColumn,
-            this.elementsDataGridViewTextBoxColumn,
-            this.fieldKeyDataGridViewTextBoxColumn});
-            this.gridFields.DataMember = "tblFieldsView";
-            this.gridFields.DataSource = this.dsHeaderDataView;
-            this.gridFields.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridFields.Location = new System.Drawing.Point(0, 51);
-            this.gridFields.Name = "gridFields";
-            this.gridFields.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridFields.Size = new System.Drawing.Size(994, 413);
-            this.gridFields.TabIndex = 3;
-            // 
-            // fieldByteOffsetDataGridViewTextBoxColumn
-            // 
-            this.fieldByteOffsetDataGridViewTextBoxColumn.DataPropertyName = "FieldByteOffset";
-            this.fieldByteOffsetDataGridViewTextBoxColumn.HeaderText = "Offset";
-            this.fieldByteOffsetDataGridViewTextBoxColumn.Name = "fieldByteOffsetDataGridViewTextBoxColumn";
-            // 
-            // fieldTypeNameDataGridViewTextBoxColumn
-            // 
-            this.fieldTypeNameDataGridViewTextBoxColumn.DataPropertyName = "FieldTypeName";
-            this.fieldTypeNameDataGridViewTextBoxColumn.HeaderText = "Type";
-            this.fieldTypeNameDataGridViewTextBoxColumn.Name = "fieldTypeNameDataGridViewTextBoxColumn";
-            this.fieldTypeNameDataGridViewTextBoxColumn.Width = 245;
-            // 
-            // fieldNameDataGridViewTextBoxColumn
-            // 
-            this.fieldNameDataGridViewTextBoxColumn.DataPropertyName = "FieldName";
-            this.fieldNameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.fieldNameDataGridViewTextBoxColumn.Name = "fieldNameDataGridViewTextBoxColumn";
-            this.fieldNameDataGridViewTextBoxColumn.Width = 250;
-            // 
-            // fieldIndexDataGridViewTextBoxColumn
-            // 
-            this.fieldIndexDataGridViewTextBoxColumn.DataPropertyName = "FieldIndex";
-            this.fieldIndexDataGridViewTextBoxColumn.HeaderText = "Index";
-            this.fieldIndexDataGridViewTextBoxColumn.Name = "fieldIndexDataGridViewTextBoxColumn";
-            this.fieldIndexDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // dataSizeDataGridViewTextBoxColumn
-            // 
-            this.dataSizeDataGridViewTextBoxColumn.DataPropertyName = "DataSize";
-            this.dataSizeDataGridViewTextBoxColumn.HeaderText = "Size";
-            this.dataSizeDataGridViewTextBoxColumn.Name = "dataSizeDataGridViewTextBoxColumn";
-            this.dataSizeDataGridViewTextBoxColumn.Width = 110;
-            // 
-            // dataTypeDataGridViewTextBoxColumn
-            // 
-            this.dataTypeDataGridViewTextBoxColumn.DataPropertyName = "DataType";
-            this.dataTypeDataGridViewTextBoxColumn.HeaderText = "Data Type";
-            this.dataTypeDataGridViewTextBoxColumn.Name = "dataTypeDataGridViewTextBoxColumn";
-            this.dataTypeDataGridViewTextBoxColumn.Width = 110;
-            // 
-            // elementsDataGridViewTextBoxColumn
-            // 
-            this.elementsDataGridViewTextBoxColumn.DataPropertyName = "Elements";
-            this.elementsDataGridViewTextBoxColumn.HeaderText = "Elements";
-            this.elementsDataGridViewTextBoxColumn.Name = "elementsDataGridViewTextBoxColumn";
-            this.elementsDataGridViewTextBoxColumn.Width = 75;
-            // 
-            // fieldKeyDataGridViewTextBoxColumn
-            // 
-            this.fieldKeyDataGridViewTextBoxColumn.DataPropertyName = "FieldKey";
-            this.fieldKeyDataGridViewTextBoxColumn.HeaderText = "FieldKey";
-            this.fieldKeyDataGridViewTextBoxColumn.Name = "fieldKeyDataGridViewTextBoxColumn";
-            this.fieldKeyDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // dsHeaderDataView
-            // 
-            this.dsHeaderDataView.DataSetName = "CHeaderDataSet";
-            this.dsHeaderDataView.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pnlStructUnion
             // 
@@ -280,6 +210,7 @@
             this.MainTab.Controls.Add(this.tabFileLoad);
             this.MainTab.Controls.Add(this.tabDisplayExport);
             this.MainTab.Controls.Add(this.tabSettings);
+            this.MainTab.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainTab.Location = new System.Drawing.Point(6, 477);
             this.MainTab.Name = "MainTab";
             this.MainTab.SelectedIndex = 0;
@@ -288,14 +219,14 @@
             // 
             // tabFileLoad
             // 
-            this.tabFileLoad.BackColor = System.Drawing.Color.LightGray;
+            this.tabFileLoad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.tabFileLoad.Controls.Add(this.btnClearFileNames);
             this.tabFileLoad.Controls.Add(this.btnParse);
-            this.tabFileLoad.Controls.Add(this.btnLoadHeaderFiles);
             this.tabFileLoad.Controls.Add(this.btnHeaderFileSearch);
             this.tabFileLoad.Controls.Add(this.txtHeaderFileNames);
             this.tabFileLoad.Controls.Add(this.lblHeaderFileNamesInfoHdr);
             this.tabFileLoad.Controls.Add(this.lblHeaderFileNamesHdr);
+            this.tabFileLoad.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabFileLoad.Location = new System.Drawing.Point(4, 25);
             this.tabFileLoad.Name = "tabFileLoad";
             this.tabFileLoad.Padding = new System.Windows.Forms.Padding(3);
@@ -305,6 +236,11 @@
             // 
             // btnClearFileNames
             // 
+            this.btnClearFileNames.BackGradientType = DotCoolControls.Tools.GradientType.BackwardDiagonal;
+            this.btnClearFileNames.BackgroundGradientColor1 = System.Drawing.Color.PowderBlue;
+            this.btnClearFileNames.BackgroundGradientColor2 = System.Drawing.Color.MidnightBlue;
+            this.btnClearFileNames.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClearFileNames.BackgroundImage")));
+            this.btnClearFileNames.DrawBackgroundGradient = true;
             this.btnClearFileNames.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClearFileNames.Location = new System.Drawing.Point(6, 156);
             this.btnClearFileNames.Name = "btnClearFileNames";
@@ -316,29 +252,31 @@
             // 
             // btnParse
             // 
-            this.btnParse.Enabled = false;
+            this.btnParse.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnParse.BackGradientType = DotCoolControls.Tools.GradientType.Ellipsis;
+            this.btnParse.BackgroundGradientColor1 = System.Drawing.Color.PowderBlue;
+            this.btnParse.BackgroundGradientColor2 = System.Drawing.Color.MidnightBlue;
+            this.btnParse.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnParse.BackgroundImage")));
+            this.btnParse.DrawBackgroundGradient = true;
             this.btnParse.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnParse.Location = new System.Drawing.Point(363, 168);
+            this.btnParse.Image = ((System.Drawing.Image)(resources.GetObject("btnParse.Image")));
+            this.btnParse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnParse.Location = new System.Drawing.Point(720, 51);
             this.btnParse.Name = "btnParse";
-            this.btnParse.Size = new System.Drawing.Size(562, 72);
+            this.btnParse.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.btnParse.Size = new System.Drawing.Size(486, 105);
             this.btnParse.TabIndex = 10;
             this.btnParse.Text = "Parse Header Files";
-            this.btnParse.UseVisualStyleBackColor = true;
+            this.btnParse.UseVisualStyleBackColor = false;
             this.btnParse.Click += new System.EventHandler(this.btnParse_Click);
-            // 
-            // btnLoadHeaderFiles
-            // 
-            this.btnLoadHeaderFiles.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoadHeaderFiles.Location = new System.Drawing.Point(813, 45);
-            this.btnLoadHeaderFiles.Name = "btnLoadHeaderFiles";
-            this.btnLoadHeaderFiles.Size = new System.Drawing.Size(327, 72);
-            this.btnLoadHeaderFiles.TabIndex = 9;
-            this.btnLoadHeaderFiles.Text = "&Load Header Files";
-            this.btnLoadHeaderFiles.UseVisualStyleBackColor = true;
-            this.btnLoadHeaderFiles.Click += new System.EventHandler(this.btnLoadHeaderFiles_Click);
             // 
             // btnHeaderFileSearch
             // 
+            this.btnHeaderFileSearch.BackGradientType = DotCoolControls.Tools.GradientType.BackwardDiagonal;
+            this.btnHeaderFileSearch.BackgroundGradientColor1 = System.Drawing.Color.PowderBlue;
+            this.btnHeaderFileSearch.BackgroundGradientColor2 = System.Drawing.Color.MidnightBlue;
+            this.btnHeaderFileSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHeaderFileSearch.BackgroundImage")));
+            this.btnHeaderFileSearch.DrawBackgroundGradient = true;
             this.btnHeaderFileSearch.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHeaderFileSearch.Location = new System.Drawing.Point(6, 84);
             this.btnHeaderFileSearch.Name = "btnHeaderFileSearch";
@@ -350,11 +288,12 @@
             // 
             // txtHeaderFileNames
             // 
+            this.txtHeaderFileNames.BackColor = System.Drawing.Color.AliceBlue;
             this.txtHeaderFileNames.Location = new System.Drawing.Point(144, 9);
             this.txtHeaderFileNames.Multiline = true;
             this.txtHeaderFileNames.Name = "txtHeaderFileNames";
             this.txtHeaderFileNames.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtHeaderFileNames.Size = new System.Drawing.Size(525, 144);
+            this.txtHeaderFileNames.Size = new System.Drawing.Size(525, 186);
             this.txtHeaderFileNames.TabIndex = 6;
             // 
             // lblHeaderFileNamesInfoHdr
@@ -378,7 +317,7 @@
             // 
             // tabDisplayExport
             // 
-            this.tabDisplayExport.BackColor = System.Drawing.Color.LightGray;
+            this.tabDisplayExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.tabDisplayExport.Controls.Add(this.btnQuery);
             this.tabDisplayExport.Controls.Add(this.pnlQuerySettings);
             this.tabDisplayExport.Controls.Add(this.pnlDataExport);
@@ -389,61 +328,26 @@
             this.tabDisplayExport.TabIndex = 1;
             this.tabDisplayExport.Text = "Display/Export";
             // 
-            // btnExportServerFileNameSearch
-            // 
-            this.btnExportServerFileNameSearch.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportServerFileNameSearch.Location = new System.Drawing.Point(243, 18);
-            this.btnExportServerFileNameSearch.Name = "btnExportServerFileNameSearch";
-            this.btnExportServerFileNameSearch.Size = new System.Drawing.Size(57, 24);
-            this.btnExportServerFileNameSearch.TabIndex = 14;
-            this.btnExportServerFileNameSearch.Text = "&Search";
-            this.btnExportServerFileNameSearch.UseVisualStyleBackColor = true;
-            this.btnExportServerFileNameSearch.Click += new System.EventHandler(this.btnExportServerFileNameSearch_Click);
-            // 
-            // txtExportServerFileName
-            // 
-            this.txtExportServerFileName.AcceptsReturn = true;
-            this.txtExportServerFileName.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtExportServerFileName.Location = new System.Drawing.Point(3, 18);
-            this.txtExportServerFileName.Name = "txtExportServerFileName";
-            this.txtExportServerFileName.Size = new System.Drawing.Size(240, 22);
-            this.txtExportServerFileName.TabIndex = 12;
-            // 
-            // lblExportServerFileNameHdr
-            // 
-            this.lblExportServerFileNameHdr.AutoSize = true;
-            this.lblExportServerFileNameHdr.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExportServerFileNameHdr.Location = new System.Drawing.Point(3, 3);
-            this.lblExportServerFileNameHdr.Name = "lblExportServerFileNameHdr";
-            this.lblExportServerFileNameHdr.Size = new System.Drawing.Size(164, 16);
-            this.lblExportServerFileNameHdr.TabIndex = 13;
-            this.lblExportServerFileNameHdr.Text = "Server Export File Name";
-            // 
             // btnQuery
             // 
             this.btnQuery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnQuery.BackGradientType = DotCoolControls.Tools.GradientType.Triangular;
+            this.btnQuery.BackgroundGradientColor1 = System.Drawing.Color.Purple;
+            this.btnQuery.BackgroundGradientColor2 = System.Drawing.Color.Thistle;
+            this.btnQuery.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnQuery.BackgroundImage")));
+            this.btnQuery.DrawBackgroundGradient = true;
             this.btnQuery.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuery.Image = ((System.Drawing.Image)(resources.GetObject("btnQuery.Image")));
+            this.btnQuery.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuery.Location = new System.Drawing.Point(987, 6);
             this.btnQuery.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnQuery.Name = "btnQuery";
+            this.btnQuery.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnQuery.Size = new System.Drawing.Size(242, 63);
             this.btnQuery.TabIndex = 9;
             this.btnQuery.Text = "Query";
             this.btnQuery.UseVisualStyleBackColor = true;
             this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
-            // 
-            // btnExport
-            // 
-            this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExport.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExport.Location = new System.Drawing.Point(39, 120);
-            this.btnExport.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(230, 42);
-            this.btnExport.TabIndex = 8;
-            this.btnExport.Text = "Export";
-            this.btnExport.UseVisualStyleBackColor = true;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // pnlQuerySettings
             // 
@@ -529,6 +433,7 @@
             // txtQryDataSizeMaxSize
             // 
             this.txtQryDataSizeMaxSize.AcceptsReturn = true;
+            this.txtQryDataSizeMaxSize.BackColor = System.Drawing.Color.AliceBlue;
             this.txtQryDataSizeMaxSize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQryDataSizeMaxSize.Location = new System.Drawing.Point(153, 21);
             this.txtQryDataSizeMaxSize.Name = "txtQryDataSizeMaxSize";
@@ -539,6 +444,7 @@
             // txtQryDataSizeMinSize
             // 
             this.txtQryDataSizeMinSize.AcceptsReturn = true;
+            this.txtQryDataSizeMinSize.BackColor = System.Drawing.Color.AliceBlue;
             this.txtQryDataSizeMinSize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQryDataSizeMinSize.Location = new System.Drawing.Point(6, 21);
             this.txtQryDataSizeMinSize.Name = "txtQryDataSizeMinSize";
@@ -590,6 +496,7 @@
             // txtQryRegEx
             // 
             this.txtQryRegEx.AcceptsReturn = true;
+            this.txtQryRegEx.BackColor = System.Drawing.Color.AliceBlue;
             this.txtQryRegEx.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQryRegEx.Location = new System.Drawing.Point(9, 3);
             this.txtQryRegEx.Name = "txtQryRegEx";
@@ -633,6 +540,7 @@
             // txtQryWildcard
             // 
             this.txtQryWildcard.AcceptsReturn = true;
+            this.txtQryWildcard.BackColor = System.Drawing.Color.AliceBlue;
             this.txtQryWildcard.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQryWildcard.Location = new System.Drawing.Point(9, 3);
             this.txtQryWildcard.Name = "txtQryWildcard";
@@ -700,6 +608,7 @@
             // txtQryName
             // 
             this.txtQryName.AcceptsReturn = true;
+            this.txtQryName.BackColor = System.Drawing.Color.AliceBlue;
             this.txtQryName.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQryName.Location = new System.Drawing.Point(9, 3);
             this.txtQryName.Name = "txtQryName";
@@ -732,225 +641,6 @@
             this.rbQryDisplayAll.Text = "Display All";
             this.rbQryDisplayAll.UseVisualStyleBackColor = true;
             this.rbQryDisplayAll.CheckedChanged += new System.EventHandler(this.rbQry_CheckedChanged);
-            // 
-            // tabSettings
-            // 
-            this.tabSettings.BackColor = System.Drawing.Color.LightGray;
-            this.tabSettings.Controls.Add(this.pnlTesting);
-            this.tabSettings.Controls.Add(this.pnlDefaultSizeSettings);
-            this.tabSettings.Location = new System.Drawing.Point(4, 25);
-            this.tabSettings.Name = "tabSettings";
-            this.tabSettings.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSettings.Size = new System.Drawing.Size(1267, 244);
-            this.tabSettings.TabIndex = 2;
-            this.tabSettings.Text = "Settings";
-            // 
-            // pnlTesting
-            // 
-            this.pnlTesting.Controls.Add(this.chbShowHdrLoadTime);
-            this.pnlTesting.Controls.Add(this.chbShowParseTime);
-            this.pnlTesting.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlTesting.Location = new System.Drawing.Point(9, 96);
-            this.pnlTesting.Name = "pnlTesting";
-            this.pnlTesting.Size = new System.Drawing.Size(297, 75);
-            this.pnlTesting.TabIndex = 15;
-            this.pnlTesting.TabStop = false;
-            this.pnlTesting.Text = "Testing";
-            // 
-            // chbShowHdrLoadTime
-            // 
-            this.chbShowHdrLoadTime.AutoSize = true;
-            this.chbShowHdrLoadTime.Location = new System.Drawing.Point(12, 27);
-            this.chbShowHdrLoadTime.Name = "chbShowHdrLoadTime";
-            this.chbShowHdrLoadTime.Size = new System.Drawing.Size(218, 20);
-            this.chbShowHdrLoadTime.TabIndex = 14;
-            this.chbShowHdrLoadTime.Text = "Show Header Data Load Time";
-            this.chbShowHdrLoadTime.UseVisualStyleBackColor = true;
-            // 
-            // chbShowParseTime
-            // 
-            this.chbShowParseTime.AutoSize = true;
-            this.chbShowParseTime.Location = new System.Drawing.Point(12, 48);
-            this.chbShowParseTime.Name = "chbShowParseTime";
-            this.chbShowParseTime.Size = new System.Drawing.Size(139, 20);
-            this.chbShowParseTime.TabIndex = 13;
-            this.chbShowParseTime.Text = "Show Parse Time";
-            this.chbShowParseTime.UseVisualStyleBackColor = true;
-            // 
-            // pnlDefaultSizeSettings
-            // 
-            this.pnlDefaultSizeSettings.Controls.Add(this.lblEnumSizeHdr);
-            this.pnlDefaultSizeSettings.Controls.Add(this.txtEnumSize);
-            this.pnlDefaultSizeSettings.Controls.Add(this.lblPointerSizeHdr);
-            this.pnlDefaultSizeSettings.Controls.Add(this.txtPointerSize);
-            this.pnlDefaultSizeSettings.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlDefaultSizeSettings.Location = new System.Drawing.Point(9, 6);
-            this.pnlDefaultSizeSettings.Name = "pnlDefaultSizeSettings";
-            this.pnlDefaultSizeSettings.Size = new System.Drawing.Size(297, 75);
-            this.pnlDefaultSizeSettings.TabIndex = 14;
-            this.pnlDefaultSizeSettings.TabStop = false;
-            this.pnlDefaultSizeSettings.Text = "Default Size Settings";
-            // 
-            // lblEnumSizeHdr
-            // 
-            this.lblEnumSizeHdr.AutoSize = true;
-            this.lblEnumSizeHdr.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEnumSizeHdr.Location = new System.Drawing.Point(159, 24);
-            this.lblEnumSizeHdr.Name = "lblEnumSizeHdr";
-            this.lblEnumSizeHdr.Size = new System.Drawing.Size(122, 16);
-            this.lblEnumSizeHdr.TabIndex = 14;
-            this.lblEnumSizeHdr.Text = "Enum Size (Bytes)";
-            // 
-            // txtEnumSize
-            // 
-            this.txtEnumSize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEnumSize.Location = new System.Drawing.Point(159, 42);
-            this.txtEnumSize.Name = "txtEnumSize";
-            this.txtEnumSize.Size = new System.Drawing.Size(129, 22);
-            this.txtEnumSize.TabIndex = 15;
-            this.txtEnumSize.Text = "4";
-            this.txtEnumSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // lblPointerSizeHdr
-            // 
-            this.lblPointerSizeHdr.AutoSize = true;
-            this.lblPointerSizeHdr.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPointerSizeHdr.Location = new System.Drawing.Point(9, 24);
-            this.lblPointerSizeHdr.Name = "lblPointerSizeHdr";
-            this.lblPointerSizeHdr.Size = new System.Drawing.Size(132, 16);
-            this.lblPointerSizeHdr.TabIndex = 12;
-            this.lblPointerSizeHdr.Text = "Pointer Size (Bytes)";
-            // 
-            // txtPointerSize
-            // 
-            this.txtPointerSize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPointerSize.Location = new System.Drawing.Point(9, 42);
-            this.txtPointerSize.Name = "txtPointerSize";
-            this.txtPointerSize.Size = new System.Drawing.Size(129, 22);
-            this.txtPointerSize.TabIndex = 13;
-            this.txtPointerSize.Text = "4";
-            this.txtPointerSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // pnlStruct
-            // 
-            this.pnlStruct.Controls.Add(this.lblStructElements);
-            this.pnlStruct.Controls.Add(this.lblStructElementsHdr);
-            this.pnlStruct.Controls.Add(this.lblStructFieldCount);
-            this.pnlStruct.Controls.Add(this.lblStructFieldCountHdr);
-            this.pnlStruct.Controls.Add(this.lblStructSize);
-            this.pnlStruct.Controls.Add(this.lblStructSizeHdr);
-            this.pnlStruct.Controls.Add(this.lblStructName);
-            this.pnlStruct.Controls.Add(this.lblStructNameHdr);
-            this.pnlStruct.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlStruct.Location = new System.Drawing.Point(0, 0);
-            this.pnlStruct.Name = "pnlStruct";
-            this.pnlStruct.Size = new System.Drawing.Size(994, 51);
-            this.pnlStruct.TabIndex = 14;
-            // 
-            // lblStructElements
-            // 
-            this.lblStructElements.BackColor = System.Drawing.Color.White;
-            this.lblStructElements.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblStructElements.ForeColor = System.Drawing.Color.Black;
-            this.lblStructElements.Location = new System.Drawing.Point(684, 21);
-            this.lblStructElements.Name = "lblStructElements";
-            this.lblStructElements.Size = new System.Drawing.Size(90, 22);
-            this.lblStructElements.TabIndex = 21;
-            this.lblStructElements.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblStructElementsHdr
-            // 
-            this.lblStructElementsHdr.AutoSize = true;
-            this.lblStructElementsHdr.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStructElementsHdr.Location = new System.Drawing.Point(684, 6);
-            this.lblStructElementsHdr.Name = "lblStructElementsHdr";
-            this.lblStructElementsHdr.Size = new System.Drawing.Size(66, 16);
-            this.lblStructElementsHdr.TabIndex = 20;
-            this.lblStructElementsHdr.Text = "Elements";
-            // 
-            // lblStructFieldCount
-            // 
-            this.lblStructFieldCount.BackColor = System.Drawing.Color.White;
-            this.lblStructFieldCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblStructFieldCount.ForeColor = System.Drawing.Color.Black;
-            this.lblStructFieldCount.Location = new System.Drawing.Point(579, 21);
-            this.lblStructFieldCount.Name = "lblStructFieldCount";
-            this.lblStructFieldCount.Size = new System.Drawing.Size(90, 22);
-            this.lblStructFieldCount.TabIndex = 19;
-            this.lblStructFieldCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblStructFieldCountHdr
-            // 
-            this.lblStructFieldCountHdr.AutoSize = true;
-            this.lblStructFieldCountHdr.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStructFieldCountHdr.Location = new System.Drawing.Point(579, 6);
-            this.lblStructFieldCountHdr.Name = "lblStructFieldCountHdr";
-            this.lblStructFieldCountHdr.Size = new System.Drawing.Size(81, 16);
-            this.lblStructFieldCountHdr.TabIndex = 18;
-            this.lblStructFieldCountHdr.Text = "Field Count";
-            // 
-            // lblStructSize
-            // 
-            this.lblStructSize.BackColor = System.Drawing.Color.White;
-            this.lblStructSize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblStructSize.ForeColor = System.Drawing.Color.Black;
-            this.lblStructSize.Location = new System.Drawing.Point(387, 21);
-            this.lblStructSize.Name = "lblStructSize";
-            this.lblStructSize.Size = new System.Drawing.Size(177, 22);
-            this.lblStructSize.TabIndex = 17;
-            this.lblStructSize.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblStructSizeHdr
-            // 
-            this.lblStructSizeHdr.AutoSize = true;
-            this.lblStructSizeHdr.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStructSizeHdr.Location = new System.Drawing.Point(387, 6);
-            this.lblStructSizeHdr.Name = "lblStructSizeHdr";
-            this.lblStructSizeHdr.Size = new System.Drawing.Size(144, 16);
-            this.lblStructSizeHdr.TabIndex = 16;
-            this.lblStructSizeHdr.Text = "Structure Size (Bytes)";
-            // 
-            // lblStructName
-            // 
-            this.lblStructName.BackColor = System.Drawing.Color.White;
-            this.lblStructName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblStructName.ForeColor = System.Drawing.Color.Black;
-            this.lblStructName.Location = new System.Drawing.Point(9, 21);
-            this.lblStructName.Name = "lblStructName";
-            this.lblStructName.Size = new System.Drawing.Size(372, 22);
-            this.lblStructName.TabIndex = 15;
-            this.lblStructName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblStructNameHdr
-            // 
-            this.lblStructNameHdr.AutoSize = true;
-            this.lblStructNameHdr.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStructNameHdr.Location = new System.Drawing.Point(9, 6);
-            this.lblStructNameHdr.Name = "lblStructNameHdr";
-            this.lblStructNameHdr.Size = new System.Drawing.Size(107, 16);
-            this.lblStructNameHdr.TabIndex = 13;
-            this.lblStructNameHdr.Text = "Structure Name";
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.lbStructs);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.gridFields);
-            this.splitContainer1.Panel2.Controls.Add(this.pnlStruct);
-            this.splitContainer1.Size = new System.Drawing.Size(1281, 468);
-            this.splitContainer1.SplitterDistance = 279;
-            this.splitContainer1.TabIndex = 15;
             // 
             // pnlDataExport
             // 
@@ -1004,14 +694,434 @@
             this.pnlExportServerFile.Size = new System.Drawing.Size(303, 45);
             this.pnlExportServerFile.TabIndex = 15;
             // 
+            // txtExportServerFileName
+            // 
+            this.txtExportServerFileName.AcceptsReturn = true;
+            this.txtExportServerFileName.BackColor = System.Drawing.Color.AliceBlue;
+            this.txtExportServerFileName.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtExportServerFileName.Location = new System.Drawing.Point(3, 18);
+            this.txtExportServerFileName.Name = "txtExportServerFileName";
+            this.txtExportServerFileName.Size = new System.Drawing.Size(240, 22);
+            this.txtExportServerFileName.TabIndex = 12;
+            // 
+            // btnExportServerFileNameSearch
+            // 
+            this.btnExportServerFileNameSearch.BackGradientType = DotCoolControls.Tools.GradientType.Ellipsis;
+            this.btnExportServerFileNameSearch.BackgroundGradientColor1 = System.Drawing.Color.LavenderBlush;
+            this.btnExportServerFileNameSearch.BackgroundGradientColor2 = System.Drawing.Color.Indigo;
+            this.btnExportServerFileNameSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExportServerFileNameSearch.BackgroundImage")));
+            this.btnExportServerFileNameSearch.DrawBackgroundGradient = true;
+            this.btnExportServerFileNameSearch.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportServerFileNameSearch.Location = new System.Drawing.Point(243, 18);
+            this.btnExportServerFileNameSearch.Name = "btnExportServerFileNameSearch";
+            this.btnExportServerFileNameSearch.Size = new System.Drawing.Size(57, 24);
+            this.btnExportServerFileNameSearch.TabIndex = 14;
+            this.btnExportServerFileNameSearch.Text = "&Search";
+            this.btnExportServerFileNameSearch.UseVisualStyleBackColor = true;
+            this.btnExportServerFileNameSearch.Click += new System.EventHandler(this.btnExportServerFileNameSearch_Click);
+            // 
+            // lblExportServerFileNameHdr
+            // 
+            this.lblExportServerFileNameHdr.AutoSize = true;
+            this.lblExportServerFileNameHdr.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExportServerFileNameHdr.Location = new System.Drawing.Point(3, 3);
+            this.lblExportServerFileNameHdr.Name = "lblExportServerFileNameHdr";
+            this.lblExportServerFileNameHdr.Size = new System.Drawing.Size(164, 16);
+            this.lblExportServerFileNameHdr.TabIndex = 13;
+            this.lblExportServerFileNameHdr.Text = "Server Export File Name";
+            // 
+            // btnExport
+            // 
+            this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExport.BackGradientType = DotCoolControls.Tools.GradientType.Triangular;
+            this.btnExport.BackgroundGradientColor1 = System.Drawing.Color.DarkOrchid;
+            this.btnExport.BackgroundGradientColor2 = System.Drawing.Color.Thistle;
+            this.btnExport.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExport.BackgroundImage")));
+            this.btnExport.DrawBackgroundGradient = true;
+            this.btnExport.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
+            this.btnExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExport.Location = new System.Drawing.Point(39, 120);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Padding = new System.Windows.Forms.Padding(10, 0, 0, 2);
+            this.btnExport.Size = new System.Drawing.Size(230, 45);
+            this.btnExport.TabIndex = 8;
+            this.btnExport.Text = "Export";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // tabSettings
+            // 
+            this.tabSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.tabSettings.Controls.Add(this.pnlTesting);
+            this.tabSettings.Controls.Add(this.pnlDefaultSizeSettings);
+            this.tabSettings.Location = new System.Drawing.Point(4, 25);
+            this.tabSettings.Name = "tabSettings";
+            this.tabSettings.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSettings.Size = new System.Drawing.Size(1267, 244);
+            this.tabSettings.TabIndex = 2;
+            this.tabSettings.Text = "Settings";
+            // 
+            // pnlTesting
+            // 
+            this.pnlTesting.Controls.Add(this.chbShowParseTime);
+            this.pnlTesting.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlTesting.Location = new System.Drawing.Point(9, 96);
+            this.pnlTesting.Name = "pnlTesting";
+            this.pnlTesting.Size = new System.Drawing.Size(297, 57);
+            this.pnlTesting.TabIndex = 15;
+            this.pnlTesting.TabStop = false;
+            this.pnlTesting.Text = "Testing";
+            // 
+            // chbShowParseTime
+            // 
+            this.chbShowParseTime.AutoSize = true;
+            this.chbShowParseTime.Location = new System.Drawing.Point(12, 21);
+            this.chbShowParseTime.Name = "chbShowParseTime";
+            this.chbShowParseTime.Size = new System.Drawing.Size(139, 20);
+            this.chbShowParseTime.TabIndex = 13;
+            this.chbShowParseTime.Text = "Show Parse Time";
+            this.chbShowParseTime.UseVisualStyleBackColor = true;
+            // 
+            // pnlDefaultSizeSettings
+            // 
+            this.pnlDefaultSizeSettings.Controls.Add(this.lblEnumSizeHdr);
+            this.pnlDefaultSizeSettings.Controls.Add(this.txtEnumSize);
+            this.pnlDefaultSizeSettings.Controls.Add(this.lblPointerSizeHdr);
+            this.pnlDefaultSizeSettings.Controls.Add(this.txtPointerSize);
+            this.pnlDefaultSizeSettings.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlDefaultSizeSettings.Location = new System.Drawing.Point(9, 6);
+            this.pnlDefaultSizeSettings.Name = "pnlDefaultSizeSettings";
+            this.pnlDefaultSizeSettings.Size = new System.Drawing.Size(297, 75);
+            this.pnlDefaultSizeSettings.TabIndex = 14;
+            this.pnlDefaultSizeSettings.TabStop = false;
+            this.pnlDefaultSizeSettings.Text = "Default Size Settings";
+            // 
+            // lblEnumSizeHdr
+            // 
+            this.lblEnumSizeHdr.AutoSize = true;
+            this.lblEnumSizeHdr.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnumSizeHdr.Location = new System.Drawing.Point(159, 24);
+            this.lblEnumSizeHdr.Name = "lblEnumSizeHdr";
+            this.lblEnumSizeHdr.Size = new System.Drawing.Size(122, 16);
+            this.lblEnumSizeHdr.TabIndex = 14;
+            this.lblEnumSizeHdr.Text = "Enum Size (Bytes)";
+            // 
+            // txtEnumSize
+            // 
+            this.txtEnumSize.BackColor = System.Drawing.Color.AliceBlue;
+            this.txtEnumSize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEnumSize.Location = new System.Drawing.Point(159, 42);
+            this.txtEnumSize.Name = "txtEnumSize";
+            this.txtEnumSize.Size = new System.Drawing.Size(129, 22);
+            this.txtEnumSize.TabIndex = 15;
+            this.txtEnumSize.Text = "4";
+            this.txtEnumSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblPointerSizeHdr
+            // 
+            this.lblPointerSizeHdr.AutoSize = true;
+            this.lblPointerSizeHdr.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPointerSizeHdr.Location = new System.Drawing.Point(9, 24);
+            this.lblPointerSizeHdr.Name = "lblPointerSizeHdr";
+            this.lblPointerSizeHdr.Size = new System.Drawing.Size(132, 16);
+            this.lblPointerSizeHdr.TabIndex = 12;
+            this.lblPointerSizeHdr.Text = "Pointer Size (Bytes)";
+            // 
+            // txtPointerSize
+            // 
+            this.txtPointerSize.BackColor = System.Drawing.Color.AliceBlue;
+            this.txtPointerSize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPointerSize.Location = new System.Drawing.Point(9, 42);
+            this.txtPointerSize.Name = "txtPointerSize";
+            this.txtPointerSize.Size = new System.Drawing.Size(129, 22);
+            this.txtPointerSize.TabIndex = 13;
+            this.txtPointerSize.Text = "4";
+            this.txtPointerSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // pnlStruct
+            // 
+            this.pnlStruct.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.pnlStruct.Controls.Add(this.lblStructElements);
+            this.pnlStruct.Controls.Add(this.lblStructElementsHdr);
+            this.pnlStruct.Controls.Add(this.lblStructFieldCount);
+            this.pnlStruct.Controls.Add(this.lblStructFieldCountHdr);
+            this.pnlStruct.Controls.Add(this.lblStructSize);
+            this.pnlStruct.Controls.Add(this.lblStructSizeHdr);
+            this.pnlStruct.Controls.Add(this.lblStructName);
+            this.pnlStruct.Controls.Add(this.lblStructNameHdr);
+            this.pnlStruct.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlStruct.Location = new System.Drawing.Point(0, 0);
+            this.pnlStruct.Name = "pnlStruct";
+            this.pnlStruct.Size = new System.Drawing.Size(994, 51);
+            this.pnlStruct.TabIndex = 14;
+            // 
+            // lblStructElements
+            // 
+            this.lblStructElements.BackColor = System.Drawing.Color.AliceBlue;
+            this.lblStructElements.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblStructElements.ForeColor = System.Drawing.Color.Black;
+            this.lblStructElements.Location = new System.Drawing.Point(684, 21);
+            this.lblStructElements.Name = "lblStructElements";
+            this.lblStructElements.Size = new System.Drawing.Size(90, 22);
+            this.lblStructElements.TabIndex = 21;
+            this.lblStructElements.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblStructElementsHdr
+            // 
+            this.lblStructElementsHdr.AutoSize = true;
+            this.lblStructElementsHdr.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStructElementsHdr.Location = new System.Drawing.Point(684, 6);
+            this.lblStructElementsHdr.Name = "lblStructElementsHdr";
+            this.lblStructElementsHdr.Size = new System.Drawing.Size(66, 16);
+            this.lblStructElementsHdr.TabIndex = 20;
+            this.lblStructElementsHdr.Text = "Elements";
+            // 
+            // lblStructFieldCount
+            // 
+            this.lblStructFieldCount.BackColor = System.Drawing.Color.AliceBlue;
+            this.lblStructFieldCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblStructFieldCount.ForeColor = System.Drawing.Color.Black;
+            this.lblStructFieldCount.Location = new System.Drawing.Point(579, 21);
+            this.lblStructFieldCount.Name = "lblStructFieldCount";
+            this.lblStructFieldCount.Size = new System.Drawing.Size(90, 22);
+            this.lblStructFieldCount.TabIndex = 19;
+            this.lblStructFieldCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblStructFieldCountHdr
+            // 
+            this.lblStructFieldCountHdr.AutoSize = true;
+            this.lblStructFieldCountHdr.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStructFieldCountHdr.Location = new System.Drawing.Point(579, 6);
+            this.lblStructFieldCountHdr.Name = "lblStructFieldCountHdr";
+            this.lblStructFieldCountHdr.Size = new System.Drawing.Size(81, 16);
+            this.lblStructFieldCountHdr.TabIndex = 18;
+            this.lblStructFieldCountHdr.Text = "Field Count";
+            // 
+            // lblStructSize
+            // 
+            this.lblStructSize.BackColor = System.Drawing.Color.AliceBlue;
+            this.lblStructSize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblStructSize.ForeColor = System.Drawing.Color.Black;
+            this.lblStructSize.Location = new System.Drawing.Point(387, 21);
+            this.lblStructSize.Name = "lblStructSize";
+            this.lblStructSize.Size = new System.Drawing.Size(177, 22);
+            this.lblStructSize.TabIndex = 17;
+            this.lblStructSize.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblStructSizeHdr
+            // 
+            this.lblStructSizeHdr.AutoSize = true;
+            this.lblStructSizeHdr.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStructSizeHdr.Location = new System.Drawing.Point(387, 6);
+            this.lblStructSizeHdr.Name = "lblStructSizeHdr";
+            this.lblStructSizeHdr.Size = new System.Drawing.Size(144, 16);
+            this.lblStructSizeHdr.TabIndex = 16;
+            this.lblStructSizeHdr.Text = "Structure Size (Bytes)";
+            // 
+            // lblStructName
+            // 
+            this.lblStructName.BackColor = System.Drawing.Color.AliceBlue;
+            this.lblStructName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblStructName.ForeColor = System.Drawing.Color.Black;
+            this.lblStructName.Location = new System.Drawing.Point(9, 21);
+            this.lblStructName.Name = "lblStructName";
+            this.lblStructName.Size = new System.Drawing.Size(372, 22);
+            this.lblStructName.TabIndex = 15;
+            this.lblStructName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblStructNameHdr
+            // 
+            this.lblStructNameHdr.AutoSize = true;
+            this.lblStructNameHdr.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStructNameHdr.Location = new System.Drawing.Point(9, 6);
+            this.lblStructNameHdr.Name = "lblStructNameHdr";
+            this.lblStructNameHdr.Size = new System.Drawing.Size(107, 16);
+            this.lblStructNameHdr.TabIndex = 13;
+            this.lblStructNameHdr.Text = "Structure Name";
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.lbStructs);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.gridFields);
+            this.splitContainer1.Panel2.Controls.Add(this.pnlStruct);
+            this.splitContainer1.Size = new System.Drawing.Size(1281, 468);
+            this.splitContainer1.SplitterDistance = 279;
+            this.splitContainer1.TabIndex = 15;
+            // 
+            // gridFields
+            // 
+            this.gridFields.AutoGenerateColumns = false;
+            this.gridFields.BackGradientType = DotCoolControls.Tools.GradientType.Ellipsis;
+            this.gridFields.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.gridFields.BackgroundGradientColor1 = System.Drawing.Color.GhostWhite;
+            this.gridFields.BackgroundGradientColor2 = System.Drawing.Color.Navy;
+            this.gridFields.CellTransAlpha = 45;
+            this.gridFields.CellTransColor = System.Drawing.Color.Maroon;
+            this.gridFields.ColHeaderGradientBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.gridFields.ColHeaderGradientBorderWidth = 2F;
+            this.gridFields.ColHeaderGradientColor1 = System.Drawing.Color.LightSteelBlue;
+            this.gridFields.ColHeaderGradientColor2 = System.Drawing.Color.DarkBlue;
+            this.gridFields.ColHeaderGradientType = DotCoolControls.Tools.GradientType.Triangular;
+            this.gridFields.ColHeadersFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridFields.ColHeaderTransAlpha = 50;
+            this.gridFields.ColHeaderTransColor = System.Drawing.Color.DarkBlue;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridFields.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            this.gridFields.ColumnHeadersHeight = 25;
+            this.gridFields.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.gridFields.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.fieldByteOffsetDataGridViewTextBoxColumn,
+            this.fieldTypeNameDataGridViewTextBoxColumn,
+            this.fieldNameDataGridViewTextBoxColumn,
+            this.fieldIndexDataGridViewTextBoxColumn,
+            this.dataSizeDataGridViewTextBoxColumn,
+            this.dataTypeDataGridViewTextBoxColumn,
+            this.elementsDataGridViewTextBoxColumn,
+            this.fieldKeyDataGridViewTextBoxColumn});
+            this.gridFields.DataMember = "tblFieldsView";
+            this.gridFields.DataSource = this.dsHeaderDataView;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridFields.DefaultCellStyle = dataGridViewCellStyle32;
+            this.gridFields.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridFields.DrawBackgroundGradient = true;
+            this.gridFields.DrawCellTransColor = true;
+            this.gridFields.DrawColHeaderGradient = true;
+            this.gridFields.EnableHeadersVisualStyles = false;
+            this.gridFields.GridColor = System.Drawing.Color.Navy;
+            this.gridFields.Location = new System.Drawing.Point(0, 51);
+            this.gridFields.Name = "gridFields";
+            this.gridFields.ReadOnly = true;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle33.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridFields.RowHeadersDefaultCellStyle = dataGridViewCellStyle33;
+            this.gridFields.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridFields.Size = new System.Drawing.Size(994, 413);
+            this.gridFields.TabIndex = 3;
+            // 
+            // fieldByteOffsetDataGridViewTextBoxColumn
+            // 
+            this.fieldByteOffsetDataGridViewTextBoxColumn.DataPropertyName = "FieldByteOffset";
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.Transparent;
+            this.fieldByteOffsetDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle24;
+            this.fieldByteOffsetDataGridViewTextBoxColumn.HeaderText = "Offset";
+            this.fieldByteOffsetDataGridViewTextBoxColumn.Name = "fieldByteOffsetDataGridViewTextBoxColumn";
+            this.fieldByteOffsetDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fieldTypeNameDataGridViewTextBoxColumn
+            // 
+            this.fieldTypeNameDataGridViewTextBoxColumn.DataPropertyName = "FieldTypeName";
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.Transparent;
+            this.fieldTypeNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle25;
+            this.fieldTypeNameDataGridViewTextBoxColumn.HeaderText = "Type";
+            this.fieldTypeNameDataGridViewTextBoxColumn.Name = "fieldTypeNameDataGridViewTextBoxColumn";
+            this.fieldTypeNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fieldTypeNameDataGridViewTextBoxColumn.Width = 245;
+            // 
+            // fieldNameDataGridViewTextBoxColumn
+            // 
+            this.fieldNameDataGridViewTextBoxColumn.DataPropertyName = "FieldName";
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.Transparent;
+            this.fieldNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle26;
+            this.fieldNameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.fieldNameDataGridViewTextBoxColumn.Name = "fieldNameDataGridViewTextBoxColumn";
+            this.fieldNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fieldNameDataGridViewTextBoxColumn.Width = 250;
+            // 
+            // fieldIndexDataGridViewTextBoxColumn
+            // 
+            this.fieldIndexDataGridViewTextBoxColumn.DataPropertyName = "FieldIndex";
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.Transparent;
+            this.fieldIndexDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle27;
+            this.fieldIndexDataGridViewTextBoxColumn.HeaderText = "Index";
+            this.fieldIndexDataGridViewTextBoxColumn.Name = "fieldIndexDataGridViewTextBoxColumn";
+            this.fieldIndexDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fieldIndexDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // dataSizeDataGridViewTextBoxColumn
+            // 
+            this.dataSizeDataGridViewTextBoxColumn.DataPropertyName = "DataSize";
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.Transparent;
+            this.dataSizeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle28;
+            this.dataSizeDataGridViewTextBoxColumn.HeaderText = "Size";
+            this.dataSizeDataGridViewTextBoxColumn.Name = "dataSizeDataGridViewTextBoxColumn";
+            this.dataSizeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataSizeDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // dataTypeDataGridViewTextBoxColumn
+            // 
+            this.dataTypeDataGridViewTextBoxColumn.DataPropertyName = "DataType";
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.Transparent;
+            this.dataTypeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle29;
+            this.dataTypeDataGridViewTextBoxColumn.HeaderText = "Data Type";
+            this.dataTypeDataGridViewTextBoxColumn.Name = "dataTypeDataGridViewTextBoxColumn";
+            this.dataTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataTypeDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // elementsDataGridViewTextBoxColumn
+            // 
+            this.elementsDataGridViewTextBoxColumn.DataPropertyName = "Elements";
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.Transparent;
+            this.elementsDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle30;
+            this.elementsDataGridViewTextBoxColumn.HeaderText = "Elements";
+            this.elementsDataGridViewTextBoxColumn.Name = "elementsDataGridViewTextBoxColumn";
+            this.elementsDataGridViewTextBoxColumn.ReadOnly = true;
+            this.elementsDataGridViewTextBoxColumn.Width = 75;
+            // 
+            // fieldKeyDataGridViewTextBoxColumn
+            // 
+            this.fieldKeyDataGridViewTextBoxColumn.DataPropertyName = "FieldKey";
+            dataGridViewCellStyle31.BackColor = System.Drawing.Color.Transparent;
+            this.fieldKeyDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle31;
+            this.fieldKeyDataGridViewTextBoxColumn.HeaderText = "FieldKey";
+            this.fieldKeyDataGridViewTextBoxColumn.Name = "fieldKeyDataGridViewTextBoxColumn";
+            this.fieldKeyDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fieldKeyDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dsHeaderDataView
+            // 
+            this.dsHeaderDataView.DataSetName = "CHeaderDataSet";
+            this.dsHeaderDataView.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // frmCHeaderExtract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1283, 753);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.MainTab);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
@@ -1020,8 +1130,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "C Header Structure/Union Extractor";
             this.Load += new System.EventHandler(this.frmCHeaderExtract_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridFields)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsHeaderDataView)).EndInit();
             this.pnlStructUnion.ResumeLayout(false);
             this.pnlStructUnion.PerformLayout();
             this.MainTab.ResumeLayout(false);
@@ -1040,6 +1148,10 @@
             this.pnlQryWildcard.PerformLayout();
             this.pnlQryName.ResumeLayout(false);
             this.pnlQryName.PerformLayout();
+            this.pnlDataExport.ResumeLayout(false);
+            this.pnlDataExport.PerformLayout();
+            this.pnlExportServerFile.ResumeLayout(false);
+            this.pnlExportServerFile.PerformLayout();
             this.tabSettings.ResumeLayout(false);
             this.pnlTesting.ResumeLayout(false);
             this.pnlTesting.PerformLayout();
@@ -1051,26 +1163,22 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.pnlDataExport.ResumeLayout(false);
-            this.pnlDataExport.PerformLayout();
-            this.pnlExportServerFile.ResumeLayout(false);
-            this.pnlExportServerFile.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridFields)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsHeaderDataView)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.ListBox lbStructs;
-        private System.Windows.Forms.DataGridView gridFields;
         private CHeaderParser.Data.CHeaderDataSet dsHeaderDataView;
         private System.Windows.Forms.GroupBox pnlStructUnion;
         private System.Windows.Forms.RadioButton rbSUUnion;
         private System.Windows.Forms.RadioButton rbSUStruct;
         private System.Windows.Forms.TabControl MainTab;
         private System.Windows.Forms.TabPage tabFileLoad;
-        private System.Windows.Forms.Button btnParse;
-        private System.Windows.Forms.Button btnLoadHeaderFiles;
-        private System.Windows.Forms.Button btnHeaderFileSearch;
+        private DotCoolControls.DotCoolButton btnParse;
+        private DotCoolControls.DotCoolButton btnHeaderFileSearch;
         private System.Windows.Forms.TextBox txtHeaderFileNames;
         private System.Windows.Forms.Label lblHeaderFileNamesInfoHdr;
         private System.Windows.Forms.Label lblHeaderFileNamesHdr;
@@ -1101,15 +1209,15 @@
         private System.Windows.Forms.RadioButton rbSONone;
         private System.Windows.Forms.RadioButton rbSODescending;
         private System.Windows.Forms.RadioButton rbSOAscending;
-        private System.Windows.Forms.Button btnClearFileNames;
-        private System.Windows.Forms.Button btnExport;
+        private DotCoolControls.DotCoolButton btnClearFileNames;
+        private DotCoolControls.DotCoolButton btnExport;
         private System.Windows.Forms.TabPage tabSettings;
         private System.Windows.Forms.GroupBox pnlDefaultSizeSettings;
         private System.Windows.Forms.Label lblEnumSizeHdr;
         private System.Windows.Forms.TextBox txtEnumSize;
         private System.Windows.Forms.Label lblPointerSizeHdr;
         private System.Windows.Forms.TextBox txtPointerSize;
-        private System.Windows.Forms.Button btnQuery;
+        private DotCoolControls.DotCoolButton btnQuery;
         private System.Windows.Forms.Panel pnlStruct;
         private System.Windows.Forms.Label lblStructFieldCount;
         private System.Windows.Forms.Label lblStructFieldCountHdr;
@@ -1121,7 +1229,6 @@
         private System.Windows.Forms.Label lblStructElementsHdr;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.GroupBox pnlTesting;
-        private System.Windows.Forms.CheckBox chbShowHdrLoadTime;
         private System.Windows.Forms.CheckBox chbShowParseTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn fieldByteOffsetDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fieldTypeNameDataGridViewTextBoxColumn;
@@ -1131,13 +1238,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn elementsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fieldKeyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnExportServerFileNameSearch;
+        private DotCoolControls.DotCoolButton btnExportServerFileNameSearch;
         private System.Windows.Forms.TextBox txtExportServerFileName;
         private System.Windows.Forms.Label lblExportServerFileNameHdr;
         private System.Windows.Forms.GroupBox pnlDataExport;
         private System.Windows.Forms.RadioButton rbExportServerData;
         private System.Windows.Forms.RadioButton rbExportLocalData;
         private System.Windows.Forms.Panel pnlExportServerFile;
+        private DotCoolControls.DotCoolGridView gridFields;
     }
 }
 

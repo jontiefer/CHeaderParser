@@ -195,6 +195,43 @@ namespace CHeaderParser
         /// Loads the data of all the header files set in the header file names textbox into the HeaderDeclareParser object in the form,
         /// which will then make the header data files available for parsing and extracting their type definition and structure data.
         /// </summary>
+        private bool LoadHeaderFiles()
+        {
+            try
+            {                
+                if (txtHeaderFileNames.Text.Trim() == "")
+                {
+                    MessageBox.Show("No header files set to be loaded!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return false;
+                }//end if
+
+                m_Parser.ClearHeaderData();
+
+                string[] aryHeaderFileNames = txtHeaderFileNames.Text.
+                                                                Split(new string[] { "\r\n", ",", ";" }, StringSplitOptions.RemoveEmptyEntries)
+                                                                .Select(filename => filename.Trim())
+                                                                .Where(filename => File.Exists(filename))
+                                                                .ToArray();
+
+                foreach (string strHeaderFileName in aryHeaderFileNames)
+                {
+                    m_Parser.AppendHeaderFromFile(strHeaderFileName);
+                }//next strHeaderFileName
+                
+                return true;
+            }
+            catch (Exception err)
+            {
+                ErrorHandler.ShowErrorMessage(err, "Error in LoadHeaderFiles function of frmCHeaderExtract form.");
+                return false;
+            }
+        }
+
+        /*OBSOLETE: Header Files will be loaded and parsed in the Parse button click event handler.
+        /// <summary>
+        /// Loads the data of all the header files set in the header file names textbox into the HeaderDeclareParser object in the form,
+        /// which will then make the header data files available for parsing and extracting their type definition and structure data.
+        /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnLoadHeaderFiles_Click(object sender, EventArgs e)
@@ -237,14 +274,14 @@ namespace CHeaderParser
                 ErrorHandler.ShowErrorMessage(err, "Error in btnLoadHeaderFiles_Click function of frmCHeaderExtract form.");
             }
         }
-
+        */
 
         #endregion
 
         #region Header Parsing and Extraction Functions, Event Handlers
 
         /// <summary>
-        /// When the Parse button is clicked, all header data files that have been loaded into the HeaderDeclareParser object of the form, 
+        /// When the Parse button is clicked, all header data files will be loaded into the HeaderDeclareParser object of the form and then 
         /// will be parsed and have the desired information extracted from the file into data objects.   The parser will extract all type definition, 
         /// enumerations, structure and union information from the file and load them into their associated data objects in the data tables of a 
         /// CHeaderDataSet data object.   Once all the data in the header data file (or set of files) is parsed, the extracted data can be 
@@ -258,8 +295,11 @@ namespace CHeaderParser
             {
                 DateTime datStartTime = DateTime.Now;
 
-                this.Cursor = Cursors.WaitCursor;
+                if (!LoadHeaderFiles())
+                    return;
 
+                this.Cursor = Cursors.WaitCursor;
+                
                 m_Parser.CurrentPos = 0;
 
                 m_HeaderAccess.TypeDefsTable.Rows.Clear();
@@ -308,7 +348,12 @@ namespace CHeaderParser
                 } while (!m_Parser.EndOfFile);
 
                 TimeSpan tsElapsed = DateTime.Now.Subtract(datStartTime);
-                
+
+                //Once the parsing operation completes successfully, all the structures/unions extracted from the header files will be initially 
+                //queried and loaded in the form.
+                rbQryDisplayAll.Checked = true;
+                btnQuery_Click(btnQuery, EventArgs.Empty);
+
                 this.Cursor = Cursors.Default;
                 MessageBox.Show("Header File Parsing Completed!", "Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
