@@ -115,7 +115,7 @@ namespace CHeaderParser.Extractor
                 //before proceeding with extracting the type definition declaration.  This operation will both convert the non-numeric array
                 //elements of the fields contained in the structure, as well as the structure, itself.
                 if (strStruct.Contains('[') && strStruct.Contains(']'))
-                {
+                {                    
                     if (!ExtractorUtils.IsNumericArray(strStruct))
                         strStruct = ExtractorUtils.ConvertNonNumericElements(m_HeaderAccess, strStruct);
                 }//end if        
@@ -340,8 +340,8 @@ namespace CHeaderParser.Extractor
                         fdFieldSchema.FieldTypeName = "function";
                     }//end if
                 }//end if                
-                
 
+                
                 if (!blIsStructDeclaration)
                 {                    
                     strFieldData = strStruct.Substring(iCurPos, iFieldEndPos - iCurPos).Trim();
@@ -356,7 +356,7 @@ namespace CHeaderParser.Extractor
                         string[] aryFieldSections = null;
                         string strFieldTypeName = "";
                         int iFieldNameStartIndex = 0;
-
+                        
                         //The field names will begin either at the last element in the split field sections array string or when the first element
                         //containing a comma (which indicates the beginning of a multiple single field type declaration) is located.
                         if (!strFieldData.Contains(','))
@@ -549,7 +549,7 @@ namespace CHeaderParser.Extractor
                             }//end if
 
                             int iTotalElements = 1;
-
+                            
                             if (strFieldName.Contains("["))
                             {
                                 iTotalElements = ExtractorUtils.CalculateFieldElements(strFieldName);
