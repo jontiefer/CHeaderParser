@@ -31,17 +31,17 @@ namespace CHeaderParser
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCHeaderExtract));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbStructs = new System.Windows.Forms.ListBox();
             this.pnlStructUnion = new System.Windows.Forms.GroupBox();
             this.rbSUBoth = new System.Windows.Forms.RadioButton();
@@ -236,12 +236,24 @@ namespace CHeaderParser
             // 
             // btnClearFileNames
             // 
+            this.btnClearFileNames.BackGradientColor1 = System.Drawing.Color.PowderBlue;
+            this.btnClearFileNames.BackGradientColor2 = System.Drawing.Color.MidnightBlue;
+            this.btnClearFileNames.BackGradientColorMouseDown1 = System.Drawing.Color.Purple;
+            this.btnClearFileNames.BackGradientColorMouseDown2 = System.Drawing.Color.Thistle;
+            this.btnClearFileNames.BackGradientColorMouseOver1 = System.Drawing.Color.LightCyan;
+            this.btnClearFileNames.BackGradientColorMouseOver2 = System.Drawing.Color.Blue;
             this.btnClearFileNames.BackGradientType = DotCoolControls.Tools.GradientType.BackwardDiagonal;
-            this.btnClearFileNames.BackgroundGradientColor1 = System.Drawing.Color.PowderBlue;
-            this.btnClearFileNames.BackgroundGradientColor2 = System.Drawing.Color.MidnightBlue;
+            this.btnClearFileNames.BackGradientTypeMouseDown = DotCoolControls.Tools.GradientType.BackwardDiagonal;
+            this.btnClearFileNames.BackGradientTypeMouseOver = DotCoolControls.Tools.GradientType.BackwardDiagonal;
             this.btnClearFileNames.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClearFileNames.BackgroundImage")));
             this.btnClearFileNames.DrawBackgroundGradient = true;
+            this.btnClearFileNames.EnableTextMouseDown = true;
             this.btnClearFileNames.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearFileNames.FontMouseDown = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearFileNames.FontMouseOver = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearFileNames.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnClearFileNames.ForeColorMouseDown = System.Drawing.SystemColors.ControlText;
+            this.btnClearFileNames.ForeColorMouseOver = System.Drawing.SystemColors.ControlText;
             this.btnClearFileNames.Location = new System.Drawing.Point(6, 156);
             this.btnClearFileNames.Name = "btnClearFileNames";
             this.btnClearFileNames.Size = new System.Drawing.Size(132, 39);
@@ -253,12 +265,25 @@ namespace CHeaderParser
             // btnParse
             // 
             this.btnParse.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnParse.BackGradientColor1 = System.Drawing.Color.PowderBlue;
+            this.btnParse.BackGradientColor2 = System.Drawing.Color.MidnightBlue;
+            this.btnParse.BackGradientColorMouseDown1 = System.Drawing.Color.MistyRose;
+            this.btnParse.BackGradientColorMouseDown2 = System.Drawing.Color.Red;
+            this.btnParse.BackGradientColorMouseOver1 = System.Drawing.Color.LightCyan;
+            this.btnParse.BackGradientColorMouseOver2 = System.Drawing.Color.RoyalBlue;
             this.btnParse.BackGradientType = DotCoolControls.Tools.GradientType.Ellipsis;
-            this.btnParse.BackgroundGradientColor1 = System.Drawing.Color.PowderBlue;
-            this.btnParse.BackgroundGradientColor2 = System.Drawing.Color.MidnightBlue;
+            this.btnParse.BackGradientTypeMouseDown = DotCoolControls.Tools.GradientType.Triangular;
+            this.btnParse.BackGradientTypeMouseOver = DotCoolControls.Tools.GradientType.Ellipsis;
             this.btnParse.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnParse.BackgroundImage")));
             this.btnParse.DrawBackgroundGradient = true;
+            this.btnParse.EnableTextMouseDown = true;
+            this.btnParse.EnableTextMouseOver = true;
             this.btnParse.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnParse.FontMouseDown = new System.Drawing.Font("Arial", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnParse.FontMouseOver = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnParse.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnParse.ForeColorMouseDown = System.Drawing.Color.Yellow;
+            this.btnParse.ForeColorMouseOver = System.Drawing.Color.Maroon;
             this.btnParse.Image = ((System.Drawing.Image)(resources.GetObject("btnParse.Image")));
             this.btnParse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnParse.Location = new System.Drawing.Point(720, 51);
@@ -272,12 +297,24 @@ namespace CHeaderParser
             // 
             // btnHeaderFileSearch
             // 
+            this.btnHeaderFileSearch.BackGradientColor1 = System.Drawing.Color.PowderBlue;
+            this.btnHeaderFileSearch.BackGradientColor2 = System.Drawing.Color.MidnightBlue;
+            this.btnHeaderFileSearch.BackGradientColorMouseDown1 = System.Drawing.Color.Purple;
+            this.btnHeaderFileSearch.BackGradientColorMouseDown2 = System.Drawing.Color.Thistle;
+            this.btnHeaderFileSearch.BackGradientColorMouseOver1 = System.Drawing.Color.LightCyan;
+            this.btnHeaderFileSearch.BackGradientColorMouseOver2 = System.Drawing.Color.Blue;
             this.btnHeaderFileSearch.BackGradientType = DotCoolControls.Tools.GradientType.BackwardDiagonal;
-            this.btnHeaderFileSearch.BackgroundGradientColor1 = System.Drawing.Color.PowderBlue;
-            this.btnHeaderFileSearch.BackgroundGradientColor2 = System.Drawing.Color.MidnightBlue;
+            this.btnHeaderFileSearch.BackGradientTypeMouseDown = DotCoolControls.Tools.GradientType.BackwardDiagonal;
+            this.btnHeaderFileSearch.BackGradientTypeMouseOver = DotCoolControls.Tools.GradientType.BackwardDiagonal;
             this.btnHeaderFileSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHeaderFileSearch.BackgroundImage")));
             this.btnHeaderFileSearch.DrawBackgroundGradient = true;
+            this.btnHeaderFileSearch.EnableTextMouseDown = true;
             this.btnHeaderFileSearch.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHeaderFileSearch.FontMouseDown = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHeaderFileSearch.FontMouseOver = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHeaderFileSearch.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnHeaderFileSearch.ForeColorMouseDown = System.Drawing.SystemColors.ControlText;
+            this.btnHeaderFileSearch.ForeColorMouseOver = System.Drawing.SystemColors.ControlText;
             this.btnHeaderFileSearch.Location = new System.Drawing.Point(6, 84);
             this.btnHeaderFileSearch.Name = "btnHeaderFileSearch";
             this.btnHeaderFileSearch.Size = new System.Drawing.Size(132, 69);
@@ -331,12 +368,25 @@ namespace CHeaderParser
             // btnQuery
             // 
             this.btnQuery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnQuery.BackGradientColor1 = System.Drawing.Color.Purple;
+            this.btnQuery.BackGradientColor2 = System.Drawing.Color.Thistle;
+            this.btnQuery.BackGradientColorMouseDown1 = System.Drawing.Color.DarkBlue;
+            this.btnQuery.BackGradientColorMouseDown2 = System.Drawing.Color.PaleVioletRed;
+            this.btnQuery.BackGradientColorMouseOver1 = System.Drawing.Color.DeepPink;
+            this.btnQuery.BackGradientColorMouseOver2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnQuery.BackGradientType = DotCoolControls.Tools.GradientType.Triangular;
-            this.btnQuery.BackgroundGradientColor1 = System.Drawing.Color.Purple;
-            this.btnQuery.BackgroundGradientColor2 = System.Drawing.Color.Thistle;
+            this.btnQuery.BackGradientTypeMouseDown = DotCoolControls.Tools.GradientType.TenPointPoly;
+            this.btnQuery.BackGradientTypeMouseOver = DotCoolControls.Tools.GradientType.Triangular;
             this.btnQuery.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnQuery.BackgroundImage")));
             this.btnQuery.DrawBackgroundGradient = true;
+            this.btnQuery.EnableTextMouseDown = true;
+            this.btnQuery.EnableTextMouseOver = true;
             this.btnQuery.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuery.FontMouseDown = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuery.FontMouseOver = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuery.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnQuery.ForeColorMouseDown = System.Drawing.Color.Cyan;
+            this.btnQuery.ForeColorMouseOver = System.Drawing.Color.Lime;
             this.btnQuery.Image = ((System.Drawing.Image)(resources.GetObject("btnQuery.Image")));
             this.btnQuery.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuery.Location = new System.Drawing.Point(987, 6);
@@ -706,12 +756,23 @@ namespace CHeaderParser
             // 
             // btnExportServerFileNameSearch
             // 
+            this.btnExportServerFileNameSearch.BackGradientColor1 = System.Drawing.Color.LavenderBlush;
+            this.btnExportServerFileNameSearch.BackGradientColor2 = System.Drawing.Color.Indigo;
+            this.btnExportServerFileNameSearch.BackGradientColorMouseDown1 = System.Drawing.Color.DarkBlue;
+            this.btnExportServerFileNameSearch.BackGradientColorMouseDown2 = System.Drawing.Color.Lavender;
+            this.btnExportServerFileNameSearch.BackGradientColorMouseOver1 = System.Drawing.SystemColors.Control;
+            this.btnExportServerFileNameSearch.BackGradientColorMouseOver2 = System.Drawing.SystemColors.Control;
             this.btnExportServerFileNameSearch.BackGradientType = DotCoolControls.Tools.GradientType.Ellipsis;
-            this.btnExportServerFileNameSearch.BackgroundGradientColor1 = System.Drawing.Color.LavenderBlush;
-            this.btnExportServerFileNameSearch.BackgroundGradientColor2 = System.Drawing.Color.Indigo;
+            this.btnExportServerFileNameSearch.BackGradientTypeMouseDown = DotCoolControls.Tools.GradientType.Ellipsis;
             this.btnExportServerFileNameSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExportServerFileNameSearch.BackgroundImage")));
             this.btnExportServerFileNameSearch.DrawBackgroundGradient = true;
+            this.btnExportServerFileNameSearch.EnableTextMouseDown = true;
             this.btnExportServerFileNameSearch.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportServerFileNameSearch.FontMouseDown = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportServerFileNameSearch.FontMouseOver = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportServerFileNameSearch.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnExportServerFileNameSearch.ForeColorMouseDown = System.Drawing.Color.WhiteSmoke;
+            this.btnExportServerFileNameSearch.ForeColorMouseOver = System.Drawing.SystemColors.ControlText;
             this.btnExportServerFileNameSearch.Location = new System.Drawing.Point(243, 18);
             this.btnExportServerFileNameSearch.Name = "btnExportServerFileNameSearch";
             this.btnExportServerFileNameSearch.Size = new System.Drawing.Size(57, 24);
@@ -733,12 +794,25 @@ namespace CHeaderParser
             // btnExport
             // 
             this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExport.BackGradientColor1 = System.Drawing.Color.DarkOrchid;
+            this.btnExport.BackGradientColor2 = System.Drawing.Color.Thistle;
+            this.btnExport.BackGradientColorMouseDown1 = System.Drawing.Color.LightPink;
+            this.btnExport.BackGradientColorMouseDown2 = System.Drawing.Color.MediumVioletRed;
+            this.btnExport.BackGradientColorMouseOver1 = System.Drawing.Color.MediumOrchid;
+            this.btnExport.BackGradientColorMouseOver2 = System.Drawing.Color.LavenderBlush;
             this.btnExport.BackGradientType = DotCoolControls.Tools.GradientType.Triangular;
-            this.btnExport.BackgroundGradientColor1 = System.Drawing.Color.DarkOrchid;
-            this.btnExport.BackgroundGradientColor2 = System.Drawing.Color.Thistle;
+            this.btnExport.BackGradientTypeMouseDown = DotCoolControls.Tools.GradientType.Circular;
+            this.btnExport.BackGradientTypeMouseOver = DotCoolControls.Tools.GradientType.Triangular;
             this.btnExport.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExport.BackgroundImage")));
             this.btnExport.DrawBackgroundGradient = true;
+            this.btnExport.EnableTextMouseDown = true;
+            this.btnExport.EnableTextMouseOver = true;
             this.btnExport.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.FontMouseDown = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.FontMouseOver = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnExport.ForeColorMouseDown = System.Drawing.Color.WhiteSmoke;
+            this.btnExport.ForeColorMouseOver = System.Drawing.Color.Lime;
             this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
             this.btnExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExport.Location = new System.Drawing.Point(39, 120);
@@ -979,14 +1053,14 @@ namespace CHeaderParser
             this.gridFields.ColHeadersFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridFields.ColHeaderTransAlpha = 50;
             this.gridFields.ColHeaderTransColor = System.Drawing.Color.DarkBlue;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridFields.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridFields.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridFields.ColumnHeadersHeight = 25;
             this.gridFields.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gridFields.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1000,14 +1074,14 @@ namespace CHeaderParser
             this.fieldKeyDataGridViewTextBoxColumn});
             this.gridFields.DataMember = "tblFieldsView";
             this.gridFields.DataSource = this.dsHeaderDataView;
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridFields.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridFields.DefaultCellStyle = dataGridViewCellStyle10;
             this.gridFields.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridFields.DrawBackgroundGradient = true;
             this.gridFields.DrawCellTransColor = true;
@@ -1017,14 +1091,14 @@ namespace CHeaderParser
             this.gridFields.Location = new System.Drawing.Point(0, 51);
             this.gridFields.Name = "gridFields";
             this.gridFields.ReadOnly = true;
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle33.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridFields.RowHeadersDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridFields.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.gridFields.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridFields.Size = new System.Drawing.Size(994, 413);
             this.gridFields.TabIndex = 3;
@@ -1032,8 +1106,8 @@ namespace CHeaderParser
             // fieldByteOffsetDataGridViewTextBoxColumn
             // 
             this.fieldByteOffsetDataGridViewTextBoxColumn.DataPropertyName = "FieldByteOffset";
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.Transparent;
-            this.fieldByteOffsetDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent;
+            this.fieldByteOffsetDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.fieldByteOffsetDataGridViewTextBoxColumn.HeaderText = "Offset";
             this.fieldByteOffsetDataGridViewTextBoxColumn.Name = "fieldByteOffsetDataGridViewTextBoxColumn";
             this.fieldByteOffsetDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1041,8 +1115,8 @@ namespace CHeaderParser
             // fieldTypeNameDataGridViewTextBoxColumn
             // 
             this.fieldTypeNameDataGridViewTextBoxColumn.DataPropertyName = "FieldTypeName";
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.Transparent;
-            this.fieldTypeNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Transparent;
+            this.fieldTypeNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.fieldTypeNameDataGridViewTextBoxColumn.HeaderText = "Type";
             this.fieldTypeNameDataGridViewTextBoxColumn.Name = "fieldTypeNameDataGridViewTextBoxColumn";
             this.fieldTypeNameDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1051,8 +1125,8 @@ namespace CHeaderParser
             // fieldNameDataGridViewTextBoxColumn
             // 
             this.fieldNameDataGridViewTextBoxColumn.DataPropertyName = "FieldName";
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.Transparent;
-            this.fieldNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Transparent;
+            this.fieldNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.fieldNameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.fieldNameDataGridViewTextBoxColumn.Name = "fieldNameDataGridViewTextBoxColumn";
             this.fieldNameDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1061,8 +1135,8 @@ namespace CHeaderParser
             // fieldIndexDataGridViewTextBoxColumn
             // 
             this.fieldIndexDataGridViewTextBoxColumn.DataPropertyName = "FieldIndex";
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.Transparent;
-            this.fieldIndexDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Transparent;
+            this.fieldIndexDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.fieldIndexDataGridViewTextBoxColumn.HeaderText = "Index";
             this.fieldIndexDataGridViewTextBoxColumn.Name = "fieldIndexDataGridViewTextBoxColumn";
             this.fieldIndexDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1071,8 +1145,8 @@ namespace CHeaderParser
             // dataSizeDataGridViewTextBoxColumn
             // 
             this.dataSizeDataGridViewTextBoxColumn.DataPropertyName = "DataSize";
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.Transparent;
-            this.dataSizeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Transparent;
+            this.dataSizeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataSizeDataGridViewTextBoxColumn.HeaderText = "Size";
             this.dataSizeDataGridViewTextBoxColumn.Name = "dataSizeDataGridViewTextBoxColumn";
             this.dataSizeDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1081,8 +1155,8 @@ namespace CHeaderParser
             // dataTypeDataGridViewTextBoxColumn
             // 
             this.dataTypeDataGridViewTextBoxColumn.DataPropertyName = "DataType";
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.Transparent;
-            this.dataTypeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Transparent;
+            this.dataTypeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataTypeDataGridViewTextBoxColumn.HeaderText = "Data Type";
             this.dataTypeDataGridViewTextBoxColumn.Name = "dataTypeDataGridViewTextBoxColumn";
             this.dataTypeDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1091,8 +1165,8 @@ namespace CHeaderParser
             // elementsDataGridViewTextBoxColumn
             // 
             this.elementsDataGridViewTextBoxColumn.DataPropertyName = "Elements";
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.Transparent;
-            this.elementsDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Transparent;
+            this.elementsDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
             this.elementsDataGridViewTextBoxColumn.HeaderText = "Elements";
             this.elementsDataGridViewTextBoxColumn.Name = "elementsDataGridViewTextBoxColumn";
             this.elementsDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1101,8 +1175,8 @@ namespace CHeaderParser
             // fieldKeyDataGridViewTextBoxColumn
             // 
             this.fieldKeyDataGridViewTextBoxColumn.DataPropertyName = "FieldKey";
-            dataGridViewCellStyle31.BackColor = System.Drawing.Color.Transparent;
-            this.fieldKeyDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Transparent;
+            this.fieldKeyDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
             this.fieldKeyDataGridViewTextBoxColumn.HeaderText = "FieldKey";
             this.fieldKeyDataGridViewTextBoxColumn.Name = "fieldKeyDataGridViewTextBoxColumn";
             this.fieldKeyDataGridViewTextBoxColumn.ReadOnly = true;
